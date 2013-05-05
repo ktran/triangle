@@ -1,6 +1,7 @@
 package geometry.point;
 
 import color.Color;
+import color.Colored;
 import geometry.point.Point;
 
 /**
@@ -8,12 +9,6 @@ import geometry.point.Point;
  *
  * @author Kim-Anh Tran
  */
-public interface ColoredPoint extends Point {
-
-    /**
-     * Returns the color associated with this object.
-     *
-     * @return  The color of the object.
-     */
-    Color getColor();
+public interface ColoredPoint extends Point, Colored{
+    // Empty. See interfaces Point and Colored.
 }
