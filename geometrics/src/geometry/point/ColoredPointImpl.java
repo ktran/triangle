@@ -8,7 +8,7 @@ import com.vividsolutions.jts.geom.Coordinate;
  *
  * @author Kim-Anh Tran
  */
-public class ColoredPointImpl extends Coordinate implements ColoredPoint {
+public class ColoredPointImpl implements ColoredPoint {
 
     /**
      * The coordinate of the point.
@@ -39,6 +39,13 @@ public class ColoredPointImpl extends Coordinate implements ColoredPoint {
     @Override
     public Color getColor() {
         return this.color;
+    }
+
+    @Override
+    public int compareTo(Object point) {
+        ColoredPoint coloredPoint = (ColoredPoint) point;
+        Coordinate pointCoord = coloredPoint.getCoordinate();
+        return this.coordinate.compareTo(pointCoord);
     }
 }
 

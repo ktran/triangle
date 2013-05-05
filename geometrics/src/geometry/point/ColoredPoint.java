@@ -9,6 +9,6 @@ import geometry.point.Point;
  *
  * @author Kim-Anh Tran
  */
-public interface ColoredPoint extends Point, Colored{
+public interface ColoredPoint extends Point, Colored {
     // Empty. See interfaces Point and Colored.
 }

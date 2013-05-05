@@ -28,15 +28,12 @@ public class ColoredTriangle implements ColoredPolygon {
     /**
      * Creates a new colored triangle.
      *
-     * @param points                    A list with 3 points defining the triangle.
-     * @throws IllegalStateException    Thrown, if the number of points does is not as expected,
-     *                                  or if the colors of points are incompatible.
+     * @param p1                        First point characterizing the triangle.
+     * @param p2                        Second point characterizing the triangle.
+     * @param p3                        Third point characterizing the triangle.
+     * @throws IllegalStateException    Thrown, if the colors of points are incompatible.
      */
-    public ColoredTriangle(ColoredPoint[] points) throws IllegalStateException {
-        if (points.length != N_POINTS) {
-            throw new IllegalStateException("Wrong number of points. Triangle expects " + N_POINTS + " for construction.");
-        }
-
+    public ColoredTriangle(ColoredPoint p1, ColoredPoint p2, ColoredPoint p3) throws IllegalStateException {
         Color color = points[0].getColor();
         for (int i = 1; i < N_POINTS; ++i) {
             if (color != points[i].getColor()) {
@@ -61,5 +58,17 @@ public class ColoredTriangle implements ColoredPolygon {
     @Override
     public Color getColor() {
         return this.color;
+    }
+
+    @Override
+    public String toString() {
+        String output = "";
+        for (Point point : this.points) {
+            Coordinate coordinate = point.getCoordinate();
+            output += String.format("%d %d ", coordinate.x, coordinate.y);
+        }
+        output += this.color;
+
+        return output;
     }
 }
