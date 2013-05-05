@@ -1,7 +1,6 @@
 package geometry.point;
 
 import color.Color;
-import color.Colored;
 import com.vividsolutions.jts.geom.Coordinate;
 
 /**
@@ -9,7 +8,7 @@ import com.vividsolutions.jts.geom.Coordinate;
  *
  * @author Kim-Anh Tran
  */
-public class ColoredPointImpl extends Coordinate implements Colored, Point {
+public class ColoredPointImpl extends Coordinate implements ColoredPoint {
 
     /**
      * The coordinate of the point.
