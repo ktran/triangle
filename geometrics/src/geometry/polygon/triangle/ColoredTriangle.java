@@ -34,14 +34,16 @@ public class ColoredTriangle implements ColoredPolygon {
      * @throws IllegalStateException    Thrown, if the colors of points are incompatible.
      */
     public ColoredTriangle(ColoredPoint p1, ColoredPoint p2, ColoredPoint p3) throws IllegalStateException {
-        Color color = points[0].getColor();
-        for (int i = 1; i < N_POINTS; ++i) {
-            if (color != points[i].getColor()) {
-                throw new IllegalStateException("Incompatible point colors.");
-            }
+        Color color = p1.getColor();
+        if (color != p2.getColor() || color != p3.getColor()) {
+            throw new IllegalStateException("Incompatible point colors.");
         }
+
         this.color = color;
-        this.points = points;
+        this.points = new ColoredPoint[N_POINTS];
+        this.points[0] = p1;
+        this.points[1] = p2;
+        this.points[2] = p3;
 
         this.coordinates = new Coordinate[N_POINTS];
         for (int i = 0; i < N_POINTS; ++i) {
@@ -65,9 +67,9 @@ public class ColoredTriangle implements ColoredPolygon {
         String output = "";
         for (Point point : this.points) {
             Coordinate coordinate = point.getCoordinate();
-            output += String.format("%d %d ", coordinate.x, coordinate.y);
+            output += String.format("%s %s ", coordinate.x, coordinate.y);
         }
-        output += this.color;
+        output += this.color.getMask();
 
         return output;
     }
