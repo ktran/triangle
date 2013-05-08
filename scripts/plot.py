@@ -44,7 +44,7 @@ def plot_triangles(fig):
         poly = patches.Polygon([[float(data[0]),float(data[1])], 
                                 [float(data[2]), float(data[3])], 
                                 [float(data[4]), float(data[5])]],
-                               closed=True, color=cdict[data[6]])
+                               closed=True, fill=False, color=cdict[data[6]])
         ax.add_patch(poly)
     
     ax.set_xlim(0,10) 
