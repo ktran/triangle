@@ -39,6 +39,11 @@ public class ColoredTriangle implements ColoredPolygon {
             throw new IllegalStateException("Incompatible point colors.");
         }
 
+        int orientation = CGAlgorithms.computeOrientation(p1.getCoordinate(), p2.getCoordinate(), p3.getCoordinate());
+        if (orientation == CGAlgorithms.COLLINEAR) {
+            throw new IllegalStateException("Points are collinear.");
+        }
+
         this.color = color;
         this.points = new ColoredPoint[N_POINTS];
         this.points[0] = p1;
