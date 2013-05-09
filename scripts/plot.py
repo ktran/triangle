@@ -34,7 +34,7 @@ def plot_points(fig):
 
     return
 
-def plot_triangles(fig):
+def plot_triangles(fig, lower, upper):
     n = sys.stdin.readline()
     ax = fig.add_subplot(122)
     for line in range(0,int(n)):
@@ -47,12 +47,15 @@ def plot_triangles(fig):
                                closed=True, fill=False, color=cdict[data[6]])
         ax.add_patch(poly)
     
-    ax.set_xlim(0,10) 
-    ax.set_ylim(0,10) 
+    print lower, upper
+    ax.set_xlim(lower, upper) 
+    ax.set_ylim(lower, upper) 
 
 def main(argv):
+    lower = 0
+    upper = 10
     try:
-        opts, args = getopt.getopt(argv,"pta")
+        opts, args = getopt.getopt(argv,"ptl:u:a")
     except getopt.GetoptError:
         sys.exit(2)
 
@@ -61,9 +64,13 @@ def main(argv):
         if opt == '-p':
             plot_points(fig)
         elif opt == '-t':
-            plot_triangles(fig)
+            plot_triangles(fig, lower, upper)
         elif opt == '-a':
             plot_all()
+        elif opt == '-l':
+            lower = arg
+        elif opt == '-u':
+            upper = arg
     plt.show()
     sys.exit()
 
