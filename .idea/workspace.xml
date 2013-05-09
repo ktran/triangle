@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6941566a-15e5-4db7-9fc6-1d639144762a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/generate_points.py" afterPath="$PROJECT_DIR$/scripts/generate_points.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/plot.py" afterPath="$PROJECT_DIR$/scripts/plot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/search/TriangleSearch.java" afterPath="$PROJECT_DIR$/src/util/search/TriangleSearch.java" />
     </list>
     <ignored path="triangle.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368086888050" ignored="false" />
     <file path="/a.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772243348" ignored="false" />
     <file path="/sample.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772245958" ignored="false" />
-    <file path="/fragment.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367773035054" ignored="false" />
+    <file path="/fragment.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368131462604" ignored="false" />
     <file path="/TriangleMain.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368109464977" ignored="false" />
     <file path="/Reader.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772428977" ignored="false" />
     <file path="/Point.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367773651654" ignored="false" />
@@ -90,8 +86,9 @@
     <file path="/ColoredPointFactory.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772176273" ignored="false" />
     <file path="/ColoredTriangle.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368128923697" ignored="false" />
     <file path="/ColoredPolygon.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772185734" ignored="false" />
-    <file path="/TriangleSearch.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368112569199" ignored="false" />
+    <file path="/TriangleSearch.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368134601377" ignored="false" />
     <file path="/ColoredPoint.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367773639713" ignored="false" />
+    <file path="/EuclidComparator.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368134641253" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,23 +140,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/util/search/TriangleSearch.java" line="44" class="util.search.TriangleSearch" package="util.search">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="&#13;&#13;JAVA" />
-        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -187,10 +168,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Color.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Color.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geometrics/src/color/Color.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="44" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.551495">
+            <state line="65" column="58" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -223,14 +204,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TriangleSearch.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TriangleSearch.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/util/search/TriangleSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="119" selection-start="1306" selection-end="1306" vertical-scroll-proportion="13.0">
+            <state line="116" column="69" selection-start="3622" selection-end="3622" vertical-scroll-proportion="0.7823741">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1885#1899#0" expanded="true" />
-                <element signature="e#2574#2588#0" expanded="true" />
+                <element signature="e#3278#3292#0" expanded="true" />
+                <element signature="e#4020#4034#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EuclidComparator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/search/EuclidComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="7" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -263,7 +255,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/geometrics/src/geometry/point/Colored.java" />
         <option value="$PROJECT_DIR$/src/util/Writer.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/Triangle.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointFactory.java" />
@@ -276,9 +267,10 @@
         <option value="$PROJECT_DIR$/src/util/io/Writer.java" />
         <option value="$PROJECT_DIR$/geometrics/src/color/Color.java" />
         <option value="$PROJECT_DIR$/src/main/TriangleMain.java" />
-        <option value="$PROJECT_DIR$/src/util/search/TriangleSearch.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" />
+        <option value="$PROJECT_DIR$/src/util/search/TriangleSearch.java" />
+        <option value="$PROJECT_DIR$/src/util/search/EuclidComparator.java" />
       </list>
     </option>
   </component>
@@ -347,28 +339,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -795,11 +765,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jts/src/com/vividsolutions/jts/algorithm/HCoordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="17" selection-start="17" selection-end="20" vertical-scroll-proportion="0.026978416" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jts/testxml/external/geos-bug356-buffer.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="40" selection-start="2185" selection-end="2185" vertical-scroll-proportion="0.55457747" />
@@ -873,17 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/search/TriangleSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="119" selection-start="1306" selection-end="1306" vertical-scroll-proportion="13.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1885#1899#0" expanded="true" />
-            <element signature="e#2574#2588#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/TriangleMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="76" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0">
@@ -900,8 +854,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/geometrics/src/color/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="44" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.551495">
+        <state line="65" column="58" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/search/EuclidComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="7" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/search/TriangleSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="69" selection-start="3622" selection-end="3622" vertical-scroll-proportion="0.7823741">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3278#3292#0" expanded="true" />
+            <element signature="e#4020#4034#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
