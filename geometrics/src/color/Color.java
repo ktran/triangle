@@ -35,7 +35,7 @@ public enum Color {
     /**
      * Contains all color enumerationt types.
      */
-    static final Color[] values = Color.values();
+    public static final Color[] values = Color.values();
 
     /**
      * Integer that is associated with a color enum type.
