@@ -14,9 +14,12 @@ public class ColoredTriangle implements ColoredPolygon {
 
     public static final int N_POINTS = 3;
 
+    private static final double EPSILON = 0.1;
+
     protected ColoredPoint[] points;
 
     protected Color color;
+
 
     private Coordinate[] coordinates;
 
@@ -50,16 +53,65 @@ public class ColoredTriangle implements ColoredPolygon {
         this.points[1] = p2;
         this.points[2] = p3;
 
-        this.coordinates = new Coordinate[N_POINTS];
+        // For calculating distances.
+        this.coordinates = new Coordinate[N_POINTS + 1];
         for (int i = 0; i < N_POINTS; ++i) {
             coordinates[i] = this.points[i].getCoordinate();
         }
+        coordinates[N_POINTS] = this.points[0].getCoordinate();
     }
 
     @Override
-    public Boolean enclosesPoint(Point point) {
+    public boolean enclosesPoint(Point point) {
         Coordinate pointCoord = point.getCoordinate();
         return CGAlgorithms.isPointInRing(pointCoord, this.coordinates);
+    }
+
+    @Override
+    public boolean intersectsWithPolygon(Polygon polygon) {
+        Point[] points = polygon.getPoints();
+        int nPoints = points.length;
+
+        // Does polygon intersect with any line of the triangle?
+        for (int i = 0; i < nPoints; ++i) {
+            if (intersectsWithLine(points[i], points[(i+1) % nPoints])) {
+                return true;
+            }
+        }
+
+        if (enclosesPoint(points[0])) {
+            return true;
+        }
+
+        if (polygon.enclosesPoint(this.points[0])) {
+            return true;
+        }
+        return false;
+
+    }
+
+    @Override
+    public boolean intersectsWithLine(Point p1, Point p2) {
+        Coordinate c1 = p1.getCoordinate();
+        Coordinate c2 = p2.getCoordinate();
+
+
+        double distance = CGAlgorithms.distanceLineLine(this.coordinates[0], this.coordinates[1], c1, c2);
+        if (distance < 0 + EPSILON) {
+            return true;
+        }
+
+        distance = CGAlgorithms.distanceLineLine(this.coordinates[1], this.coordinates[2], c1, c2);
+        if (distance < 0 + EPSILON) {
+            return true;
+        }
+
+        CGAlgorithms.distanceLineLine(this.coordinates[0], this.coordinates[2], c1, c2);
+        if (distance < 0 + EPSILON) {
+            return true;
+        }
+
+        return false;
     }
 
     @Override

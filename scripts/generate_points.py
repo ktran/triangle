@@ -1,11 +1,10 @@
 #!/usr/bin/env python
-
 import argparse
 import sys
 import numpy
 import random
 
-directory='../testdata/'
+directory='/home/ktran/IdeaProjects/triangle/testdata/'
 filename='data'
 
 def main(argv):
@@ -38,8 +37,8 @@ def generate(size, lower, upper, colors):
     data = []
 
     for i in range(0, size):
-        x = (round(random.uniform(lower, upper), 6))
-        y = (round(random.uniform(lower, upper), 6))
+        x = (round(random.uniform(lower[0], upper[0]), 6))
+        y = (round(random.uniform(lower[0], upper[0]), 6))
         c = (random.randint(0,colors))
         data.append((x,y,c))
 

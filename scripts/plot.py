@@ -14,7 +14,7 @@ cdict = { '0' : 'y',
           '4' : 'c'
           }
 
-def plot_points(fig):
+def plot_points(fig, lower, upper):
     ax = fig.add_subplot(122)
     ax1 = fig.add_subplot(121)
     n = int(sys.stdin.readline())
@@ -28,7 +28,7 @@ def plot_points(fig):
         x.append(float(data[0]))
         y.append(float(data[1]))
         color.append(cdict[data[2]])
-
+        
     ax.scatter(x,y,c=color)
     ax1.scatter(x,y,c=color)
 
@@ -47,12 +47,9 @@ def plot_triangles(fig, lower, upper):
                                closed=True, fill=False, color=cdict[data[6]])
         ax.add_patch(poly)
     
-    print lower, upper
-    ax.set_xlim(lower, upper) 
-    ax.set_ylim(lower, upper) 
 
 def main(argv):
-    lower = 0
+    lower = -2
     upper = 10
     try:
         opts, args = getopt.getopt(argv,"ptl:u:a")
@@ -62,7 +59,7 @@ def main(argv):
     fig = plt.figure()
     for opt, arg in opts:
         if opt == '-p':
-            plot_points(fig)
+            plot_points(fig, lower, upper)
         elif opt == '-t':
             plot_triangles(fig, lower, upper)
         elif opt == '-a':

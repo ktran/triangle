@@ -22,6 +22,9 @@ public interface Polygon {
      *
      * @return True, if specified point is enclosed in polygon
      */
-    Boolean enclosesPoint(Point point);
+    boolean enclosesPoint(Point point);
 
+    boolean intersectsWithPolygon(Polygon polygon);
+
+    boolean intersectsWithLine(Point p1, Point p2);
 }
