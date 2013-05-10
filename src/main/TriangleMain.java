@@ -8,6 +8,7 @@ import util.io.Reader;
 import util.io.Writer;
 import util.search.TriangleSearch;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 
@@ -25,11 +26,17 @@ public class TriangleMain {
      */
     public static void main(String[] args) {
         List<ColoredPoint> points;
-        points = Reader.readPoints();
 
-        List<ColoredPolygon> triangles;
-        triangles = new TriangleSearch(points).searchForTriangles();
+        try {
+            points = Reader.readPoints();
 
-        Writer.writeTriangles(triangles);
+            List<ColoredPolygon> triangles;
+            triangles = new TriangleSearch(points).searchForTriangles();
+
+            Writer.writeTriangles(triangles);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            System.exit(1);
+        }
     }
 }

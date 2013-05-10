@@ -126,7 +126,7 @@ public class ColoredTriangle implements ColoredPolygon {
             Coordinate coordinate = point.getCoordinate();
             output += String.format("%s %s ", coordinate.x, coordinate.y);
         }
-        output += this.color.getMask();
+        output += this.color.getIntRepresentation();
 
         return output;
     }

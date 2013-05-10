@@ -4,13 +4,11 @@ import color.Color;
 import com.vividsolutions.jts.algorithm.CGAlgorithms;
 import com.vividsolutions.jts.geom.Coordinate;
 import geometry.point.ColoredPoint;
-import geometry.point.Point;
 import geometry.polygon.triangle.ColoredPolygon;
 import geometry.polygon.triangle.ColoredTriangle;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -50,7 +48,7 @@ public class TriangleSearch {
 
         int colorIndex;
         for (ColoredPoint point : points) {
-            colorIndex = point.getColor().getMask();
+            colorIndex = point.getColor().getIntRepresentation();
             this.points.get(colorIndex).add(point);
         }
 
@@ -91,7 +89,7 @@ public class TriangleSearch {
      * @return  Triangle, if found for the specified color. Null, otherwise.
      */
     private ColoredPolygon nextTriangle(Color color) {
-        int colorIndex = color.getMask();
+        int colorIndex = color.getIntRepresentation();
         List<ColoredPoint> cPoints = this.points.get(colorIndex);
 
         // Search as long as enough points exist for creating a triangle
@@ -154,7 +152,7 @@ public class TriangleSearch {
      * Removes all points from the considered point list that are
      * enclosed by the specified triangle.
      * 
-     * @param triangle
+     * @param triangle  The triangle that might enclose points.
      */
     private void removeEnclosedPoints(ColoredPolygon triangle) {
         for (List<ColoredPoint> pointList : this.points) {
@@ -209,7 +207,7 @@ public class TriangleSearch {
                 colorIndex = i;
             }
         }
-        return Color.fromMask(colorIndex);
+        return Color.fromInt(colorIndex);
     }
 
     /**
@@ -241,14 +239,14 @@ public class TriangleSearch {
      * @return  True, if enough points are left for creating a triangle.
      */
     private boolean enoughPointsLeft() {
-        boolean tooFew = true;
+        boolean enoughPoints = false;
         for (List<ColoredPoint> pointsList : this.points) {
             if (pointsList.size() >= ColoredTriangle.N_POINTS) {
-                tooFew = false;
+                enoughPoints = true;
                 break;
             }
         }
-        return tooFew;
+        return enoughPoints;
     }
 
 

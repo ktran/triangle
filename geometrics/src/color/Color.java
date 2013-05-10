@@ -1,7 +1,11 @@
 package color;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * Enumeration representing color types.
+ * Enumeration representing color types. Each color type corresponds to an integer
+ * in range [0..4].
  *
  * @author Kim-Anh Tran
  */
@@ -33,32 +37,53 @@ public enum Color {
     VIOLET(4);
 
     /**
-     * Contains all color enumerationt types.
+     * Map from integer value representation to color type.
      */
-    public static final Color[] values = Color.values();
+    private static final Map<Integer, Color> intToColor = new HashMap<Integer, Color>();
+    static {
+        Color[] colorValues = Color.values();
+        for (Color color : colorValues) {
+            intToColor.put(color.getIntRepresentation(), color);
+        }
+    }
 
     /**
      * Integer that is associated with a color enum type.
      */
-    private final int mask;
+    private final int intRepresentation;
 
     /**
-     * Initializes an enum with its mask.
+     * Initializes an enum with its intRepresentation.
      *
-     * @param mask  Integer associated with an enumeration type.
+     * @param intRepresentation  Integer associated with an enumeration type.
      */
-    private Color(int mask) {
-        this.mask = mask;
+    private Color(int intRepresentation) {
+        this.intRepresentation = intRepresentation;
     }
 
     /**
-     * Returns the enumeration type associated with the mask.
+     * Returns true, if the specified integer value correspons to a color type.
      *
-     * @param mask  Integer associated with an enumeration type.
-     * @return      Enumeration type associated with the mask.
+     * @param colorInt  The integer value to check.
+     * @return          True, if a color is associated with the specified integer.
      */
-    public static Color fromMask(int mask) {
-        return values[mask];
+    public static boolean validColor(int colorInt) {
+        return intToColor.containsKey(colorInt);
+    }
+
+    /**
+     * Returns the enumeration type associated with the colorInt.
+     *
+     * @param colorInt  Integer associated with an enumeration type.
+     * @return      Enumeration type associated with the colorInt.
+     */
+    public static Color fromInt(int colorInt) throws IllegalArgumentException {
+        Color color = intToColor.get(colorInt);
+        if (color == null) {
+            throw new IllegalArgumentException("Illegal color. Not in range: " + intToColor.keySet());
+        }
+
+        return color;
     }
 
     /**
@@ -66,7 +91,7 @@ public enum Color {
      *
      * @return Associated enumeration type.
      */
-    public int getMask() {
-        return this.mask;
+    public int getIntRepresentation() {
+        return this.intRepresentation;
     }
 }
