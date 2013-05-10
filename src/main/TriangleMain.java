@@ -1,7 +1,7 @@
 package main;
 
 import geometry.point.ColoredPoint;
-import geometry.polygon.triangle.ColoredPolygon;
+import geometry.polygon.ColoredPolygon;
 import util.io.Reader;
 import util.io.Writer;
 import search.TriangleSearch;

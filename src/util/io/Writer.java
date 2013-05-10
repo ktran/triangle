@@ -1,9 +1,6 @@
 package util.io;
 
-import color.Color;
-import geometry.point.ColoredPoint;
-import geometry.point.Point;
-import geometry.polygon.triangle.ColoredPolygon;
+import geometry.polygon.ColoredPolygon;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

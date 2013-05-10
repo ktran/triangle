@@ -5,6 +5,7 @@ import com.vividsolutions.jts.algorithm.CGAlgorithms;
 import com.vividsolutions.jts.geom.Coordinate;
 import geometry.point.ColoredPoint;
 import geometry.point.Point;
+import geometry.polygon.ColoredPolygon;
 import geometry.polygon.Polygon;
 
 /**

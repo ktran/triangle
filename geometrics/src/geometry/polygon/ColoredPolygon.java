@@ -1,4 +1,4 @@
-package geometry.polygon.triangle;
+package geometry.polygon;
 
 import color.Colored;
 import geometry.polygon.Polygon;
