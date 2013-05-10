@@ -4,7 +4,7 @@ import color.Color;
 import com.vividsolutions.jts.geom.Coordinate;
 
 /**
- * A colored point.
+ * A ColoredPoint implementation.
  *
  * @author Kim-Anh Tran
  */
@@ -13,18 +13,19 @@ public class ColoredPointImpl implements ColoredPoint {
     /**
      * The coordinate of the point.
      */
-    protected Coordinate coordinate;
+    private Coordinate coordinate;
 
     /**
      * The color of the point.
      */
-    protected Color color;
+    private Color color;
 
     /**
      * Creates a new colored point.
      *
-     * @param coordinate    The coordinate of the point
-     * @param color         The color of the point
+     * @param coordinate    A coordinate.
+     * @param color         A valid color.
+     * @see                 color.Color#validColor(int)
      */
     public ColoredPointImpl(Coordinate coordinate, Color color) {
         this.coordinate = coordinate;

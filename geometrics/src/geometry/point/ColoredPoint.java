@@ -5,7 +5,7 @@ import color.Colored;
 import geometry.point.Point;
 
 /**
- * Represents a colored point.
+ * Defines a colored point.
  *
  * @author Kim-Anh Tran
  */

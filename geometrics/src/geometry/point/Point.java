@@ -10,10 +10,9 @@ import com.vividsolutions.jts.geom.Coordinate;
 public interface Point extends Comparable {
 
     /**
-     * Returns the coordinates of the point.
+     * Returns the coordinate of the point.
      *
      * @return The coordinate of the point.
      */
     Coordinate getCoordinate();
-
 }

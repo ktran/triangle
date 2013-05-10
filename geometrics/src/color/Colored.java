@@ -1,6 +1,8 @@
 package color;
 
 /**
+ * Defines a colored object.
+ *
  * @author Kim-Anh Tran
  */
 public interface Colored {

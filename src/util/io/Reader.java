@@ -101,7 +101,7 @@ public class Reader {
 
             if (scanner.hasNextInt()) {
                 color = scanner.nextInt();
-                if (!Color.validColor(color)) throw new ParseException(UNEXPECTED_TYPE, i);
+                if (!Color.validColor(color)) throw new ParseException(UNEXPECTED_TYPE, iX);
             } else {
                 throw new ParseException(UNEXPECTED_TYPE, i);
             }

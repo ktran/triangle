@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Enumeration representing color types. Each color type corresponds to an integer
- * in range [0..4].
+ * Defines color types. Each color type corresponds to an integer.
  *
  * @author Kim-Anh Tran
  */
