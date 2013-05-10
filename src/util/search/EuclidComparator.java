@@ -6,8 +6,8 @@ import geometry.point.Point;
 import java.util.Comparator;
 
 /**
- * A comparator for comparing two points according to their
- * distance to a given point.
+ * An instance of EuclidComparator provides a compare function, comparing
+ * the distances to a pre-defined node.
  *
  * @author Kim-Anh Tran
  */
@@ -19,11 +19,11 @@ public class EuclidComparator implements Comparator<Point> {
     private Point point;
 
     /**
-     * Creates a new comparator, comparing points by their distance
-     * to the specified point.
+     * Creates a new comparator. The compare functionality
+     * will compare two points based on the distance to this specified
+     * point.
      *
-     * @param point The point, to which the distance is computed, The
-     *              distance determines the ordering in the compare function.
+     * @param point The reference point.
      */
     public EuclidComparator(Point point) {
         this.point = point;
@@ -31,8 +31,8 @@ public class EuclidComparator implements Comparator<Point> {
 
     @Override
     public int compare(Point p1, Point p2) {
-        Coordinate p1coord = p1.getCoordinate();
-        Coordinate p2coord = p2.getCoordinate();
+        Coordinate p1Coordinate = p1.getCoordinate();
+        Coordinate p2Coordinate = p2.getCoordinate();
 
         // Squared distances are sufficient for comparisons.
         double distP1 = squaredDistancePointPoint(this.point, p1);

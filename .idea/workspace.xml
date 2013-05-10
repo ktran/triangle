@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6941566a-15e5-4db7-9fc6-1d639144762a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/search/TriangleSearch.java" afterPath="$PROJECT_DIR$/src/util/search/TriangleSearch.java" />
     </list>
     <ignored path="triangle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,11 +83,11 @@
     <file path="/Triangle.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772191618" ignored="false" />
     <file path="/Writer.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368174860360" ignored="false" />
     <file path="/ColoredPointFactory.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368178875339" ignored="false" />
-    <file path="/ColoredTriangle.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368179719823" ignored="false" />
+    <file path="/ColoredTriangle.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368179739807" ignored="false" />
     <file path="/ColoredPolygon.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772185734" ignored="false" />
-    <file path="/TriangleSearch.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368138050768" ignored="false" />
+    <file path="/TriangleSearch.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368180386767" ignored="false" />
     <file path="/ColoredPoint.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368178734685" ignored="false" />
-    <file path="/EuclidComparator.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368134641253" ignored="false" />
+    <file path="/EuclidComparator.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368180141732" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,37 +161,27 @@
       <file leaf-file-name="ColoredTriangle.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="36" selection-start="3855" selection-end="3855" vertical-scroll-proportion="0.0">
+            <state line="114" column="57" selection-start="3358" selection-end="3358" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Color.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geometrics/src/color/Color.java">
+      <file leaf-file-name="Reader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/io/Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="66" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
+            <state line="103" column="89" selection-start="3055" selection-end="3055" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#586#602#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Polygon.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Polygon.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="66" selection-start="1307" selection-end="1307" vertical-scroll-proportion="1.0806175">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Colored.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geometrics/src/color/Colored.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="41" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
+            <state line="43" column="66" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -207,13 +196,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColoredPoint.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPoint.java">
+      <file leaf-file-name="TriangleSearch.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/util/search/TriangleSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="27" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="226" column="80" selection-start="7684" selection-end="7684" vertical-scroll-proportion="0.20240137">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -222,6 +209,15 @@
         <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EuclidComparator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/search/EuclidComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="70" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -268,10 +264,7 @@
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/Triangle.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredPolygon.java" />
         <option value="$PROJECT_DIR$/src/util/Reader.java" />
-        <option value="$PROJECT_DIR$/src/util/search/EuclidComparator.java" />
-        <option value="$PROJECT_DIR$/src/util/search/TriangleSearch.java" />
         <option value="$PROJECT_DIR$/src/util/io/Writer.java" />
-        <option value="$PROJECT_DIR$/src/util/io/Reader.java" />
         <option value="$PROJECT_DIR$/src/main/TriangleMain.java" />
         <option value="$PROJECT_DIR$/geometrics/src/color/Color.java" />
         <option value="$PROJECT_DIR$/geometrics/src/color/Colored.java" />
@@ -281,6 +274,9 @@
         <option value="$PROJECT_DIR$/geometrics/src/geometry/point/Point.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" />
+        <option value="$PROJECT_DIR$/src/util/io/Reader.java" />
+        <option value="$PROJECT_DIR$/src/util/search/EuclidComparator.java" />
+        <option value="$PROJECT_DIR$/src/util/search/TriangleSearch.java" />
       </list>
     </option>
   </component>
@@ -367,6 +363,10 @@
               <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -385,10 +385,6 @@
               <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -405,134 +401,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometrics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometrics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="polygon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometrics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="polygon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometrics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="point" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="triangle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geometrics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -809,39 +677,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/search/EuclidComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="7" selection-start="414" selection-end="414" vertical-scroll-proportion="0.024875622">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/search/TriangleSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="17" selection-start="7782" selection-end="7782" vertical-scroll-proportion="0.3283582">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/io/Writer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="13" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/io/Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="59" selection-start="3139" selection-end="3139" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/TriangleMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="5" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -904,14 +742,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="36" selection-start="3855" selection-end="3855" vertical-scroll-proportion="0.0">
+        <state line="114" column="57" selection-start="3358" selection-end="3358" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="66" selection-start="1307" selection-end="1307" vertical-scroll-proportion="1.0806175">
+        <state line="43" column="66" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/io/Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="89" selection-start="3055" selection-end="3055" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TriangleMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="5" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/search/EuclidComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="70" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/search/TriangleSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="80" selection-start="7684" selection-end="7684" vertical-scroll-proportion="0.20240137">
           <folding />
         </state>
       </provider>

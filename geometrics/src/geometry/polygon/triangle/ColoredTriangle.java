@@ -127,7 +127,7 @@ public class ColoredTriangle implements ColoredPolygon {
             return true;
         }
 
-        //Check for point included!!
+        //TODO: Check for point included!!
 
         return false;
     }

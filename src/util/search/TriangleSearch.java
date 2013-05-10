@@ -15,28 +15,28 @@ import java.util.List;
 
 
 /**
- * Initiates a triangle search.
+ * An instance of TriangleSearch searches for point-disjoint, colored triangles
+ * in a 2d set of points.
  *
  * @author Kim-Anh Tran
  */
 public class TriangleSearch {
 
     /**
-     * 2D poins that are considered for triangle creation.
+     * The collection of 2D points that are considered for triangle creation.
      */
     private List<List<ColoredPoint>> points;
 
     /**
-     * The list of triangles that are found.
+     * The collection of triangles that are found.
      */
     private List<ColoredPolygon> triangles;
 
     /**
-     * Creates a new triangle search instance that searches for point-disjoint
-     * triangles given a set of 2d points. The solution is complete, i.e.
-     * no triangle can be inserted without intersecting an already existing one.
+     * Creates a new triangle search instance for searching
+     * triangles within the specified collection f 2d points.
      *
-     * @param points    The set of points.
+     * @param points    The 2d points.
      */
     public TriangleSearch(List<ColoredPoint> points) {
         int nColors = Color.values().length;
@@ -85,8 +85,8 @@ public class TriangleSearch {
      * Searches for the next available triangle. If it returns null,
      * no triangle could be found for the specified color.
      * 
-     * @param   color   The color the next triangle should have.
-     * @return  Triangle, if found for the specified color. Null, otherwise.
+     * @param   color   The color specifying which colored triangle to search for.
+     * @return          Triangle, if found for the specified color. Null, otherwise.
      */
     private ColoredPolygon nextTriangle(Color color) {
         int colorIndex = color.getIntRepresentation();
@@ -166,8 +166,7 @@ public class TriangleSearch {
     }
 
     /**
-     * Checks if the specified triangle collides (intersects, is contained or
-     * contains) the set of existing triangles.
+     * Checks if the specified triangle collides with the set of existing triangles.
      * 
      * @param triangle  The triangle to be checked against the existing ones.
      * @return          True, if triangle does not collide with existing triangles.
@@ -214,7 +213,7 @@ public class TriangleSearch {
      * Returns a list of numbers indicating how many
      * points are still to be considered, ordered by their color.
      * 
-     * @return  List indicating how many points of each color are not yet
+     * @return  Array indicating how many points of each color are not yet
      *          considered for triangle creation.
      */
     private int[] colorOccurence() {
