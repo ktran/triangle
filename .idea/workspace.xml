@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6941566a-15e5-4db7-9fc6-1d639144762a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/color/Color.java" afterPath="$PROJECT_DIR$/geometrics/src/color/Color.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointFactory.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/io/Reader.java" afterPath="$PROJECT_DIR$/src/util/io/Reader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/TriangleMain.java" afterPath="$PROJECT_DIR$/src/main/TriangleMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/search/TriangleSearch.java" afterPath="$PROJECT_DIR$/src/util/search/TriangleSearch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="triangle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,8 +10,8 @@
     <file path="/a.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772243348" ignored="false" />
     <file path="/sample.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772245958" ignored="false" />
     <file path="/fragment.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368131462604" ignored="false" />
-    <file path="/TriangleMain.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368173542891" ignored="false" />
-    <file path="/Reader.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368173444019" ignored="false" />
+    <file path="/TriangleMain.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368176764023" ignored="false" />
+    <file path="/Reader.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368175995671" ignored="false" />
     <file path="/Point.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367773651654" ignored="false" />
     <file path="$PROJECT_DIR$/jts/doc/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.BasePointShapeFactory.html" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367680732019" ignored="false" />
     <file path="$PROJECT_DIR$/jts/doc/javadoc/constant-values.html" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367680732019" ignored="false" />
@@ -81,13 +75,13 @@
     <file path="$PROJECT_DIR$/jts/src/com/vividsolutions/jts/operation/relate/package.html" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367680732020" ignored="false" />
     <file path="$PROJECT_DIR$/jts/doc/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.Star.html" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367680732020" ignored="false" />
     <file path="$PROJECT_DIR$/jts/doc/javadoc/com/vividsolutions/jts/operation/relate/package-summary.html" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367680732020" ignored="false" />
-    <file path="/Color.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368173238013" ignored="false" />
+    <file path="/Color.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368174563276" ignored="false" />
     <file path="/ColoredPointImpl.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367775430829" ignored="false" />
     <file path="/Colored2DPoint.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367757467327" ignored="false" />
     <file path="/Colored.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772202243" ignored="false" />
     <file path="/Polygon.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368098389094" ignored="false" />
     <file path="/Triangle.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772191618" ignored="false" />
-    <file path="/Writer.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367871794486" ignored="false" />
+    <file path="/Writer.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368174860360" ignored="false" />
     <file path="/ColoredPointFactory.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772176273" ignored="false" />
     <file path="/ColoredTriangle.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368128923697" ignored="false" />
     <file path="/ColoredPolygon.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772185734" ignored="false" />
@@ -155,67 +149,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TriangleMain.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TriangleMain.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/TriangleMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="58" selection-start="630" selection-end="630" vertical-scroll-proportion="0.38659793">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ColoredTriangle.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="32" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Color.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geometrics/src/color/Color.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="5" selection-start="2293" selection-end="2293" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#622#638#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Polygon.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TriangleSearch.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/search/TriangleSearch.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="17" selection-start="7782" selection-end="7782" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/io/Reader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="49" selection-start="2169" selection-end="2169" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ColoredPointFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="31" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
+            <state line="47" column="27" selection-start="1262" selection-end="1262" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -224,26 +161,19 @@
       <file leaf-file-name="Writer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/io/Writer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="41" selection-start="725" selection-end="725" vertical-scroll-proportion="0.0">
+            <state line="17" column="13" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EuclidComparator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/search/EuclidComparator.java">
+      <file leaf-file-name="Reader.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/util/io/Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="7" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Coordinate.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jts/src/com/vividsolutions/jts/geom/Coordinate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="332" column="14" selection-start="9603" selection-end="9610" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="95" column="28" selection-start="2728" selection-end="2728" vertical-scroll-proportion="0.6626298">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -274,12 +204,12 @@
         <option value="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPoint.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/point/Point.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointImpl.java" />
-        <option value="$PROJECT_DIR$/src/util/io/Writer.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" />
         <option value="$PROJECT_DIR$/src/util/search/EuclidComparator.java" />
         <option value="$PROJECT_DIR$/src/util/search/TriangleSearch.java" />
         <option value="$PROJECT_DIR$/geometrics/src/color/Color.java" />
+        <option value="$PROJECT_DIR$/src/util/io/Writer.java" />
         <option value="$PROJECT_DIR$/src/util/io/Reader.java" />
         <option value="$PROJECT_DIR$/src/main/TriangleMain.java" />
       </list>
@@ -726,11 +656,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28228387" sideWeight="0.67129135" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991462" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32870865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -840,14 +770,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jts/src/com/vividsolutions/jts/geom/Coordinate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="332" column="14" selection-start="9603" selection-end="9610" vertical-scroll-proportion="0.0">
+        <state line="332" column="14" selection-start="9603" selection-end="9610" vertical-scroll-proportion="0.024875622">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0">
+        <state line="29" column="0" selection-start="651" selection-end="651" vertical-scroll-proportion="0.72139305">
           <folding />
         </state>
       </provider>
@@ -861,35 +791,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/search/EuclidComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="7" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0">
+        <state line="20" column="7" selection-start="414" selection-end="414" vertical-scroll-proportion="0.024875622">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/search/TriangleSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="17" selection-start="7782" selection-end="7782" vertical-scroll-proportion="0.0">
+        <state line="231" column="17" selection-start="7782" selection-end="7782" vertical-scroll-proportion="0.3283582">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/io/Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="41" selection-start="725" selection-end="725" vertical-scroll-proportion="0.0">
+        <state line="12" column="31" selection-start="230" selection-end="230" vertical-scroll-proportion="0.27363184">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geometrics/src/color/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="5" selection-start="2293" selection-end="2293" vertical-scroll-proportion="0.0">
+        <state line="87" column="58" selection-start="2138" selection-end="2138" vertical-scroll-proportion="2.1574395">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#622#638#0" expanded="true" />
@@ -897,17 +820,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/io/Reader.java">
+    <entry file="file://$PROJECT_DIR$/src/util/io/Writer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="49" selection-start="2169" selection-end="2169" vertical-scroll-proportion="0.0">
+        <state line="17" column="13" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/TriangleMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="58" selection-start="630" selection-end="630" vertical-scroll-proportion="0.38659793">
+        <state line="47" column="27" selection-start="1262" selection-end="1262" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/io/Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="28" selection-start="2728" selection-end="2728" vertical-scroll-proportion="0.6626298">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Locale;
+import java.text.ParseException;
 
 import color.Color;
 import geometry.point.ColoredPoint;
@@ -32,19 +33,25 @@ public class Reader {
     private static final int COLOR_INDEX = 2;
 
     /**
+     * Index where parses encounters the integer specifying
+     * the number of points.
+     */
+    private static int PARSE_NUMBER_OF_POINTS_INDEX = 0;
+
+    /**
      * Error message indicating a wrong type for specifying the
      * number of points to parse.
      */
     private static String INTEGER_ERROR =
-            "Number of points has to be specified as an integer value.";
+            "Unexpected or no token. Specify number of points as int.";
 
     /**
      * Error message indicating the encounter of an unexpected type while
      * parsing point and its color.
      */
     private static String UNEXPECTED_TYPE =
-            "Unexpected coordinate or color. Specify points " +
-            "as x y c with x,y being doubles, c being a valid integer.";
+            "Unexpected or no token. Specify point (x,y) and color " +
+            "as double double int.";
 
     /**
      * Reads std:in and returns a collection of colored points.
@@ -60,7 +67,7 @@ public class Reader {
      * @throws IOException Thrown, if input can not be parsed.
      * @see ColoredPoint
      */
-    public static List<ColoredPoint> readPoints() throws IOException, IllegalArgumentException {
+    public static List<ColoredPoint> readPoints() throws ParseException {
         Scanner scanner;
         scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
@@ -70,10 +77,10 @@ public class Reader {
             if (scanner.hasNextInt()) {
                 nCoordinates = scanner.nextInt();
             } else {
-                throw new IOException(INTEGER_ERROR);
+                throw new ParseException(INTEGER_ERROR, PARSE_NUMBER_OF_POINTS_INDEX);
             }
         } else {
-            throw new IOException(INTEGER_ERROR);
+            throw new ParseException(INTEGER_ERROR, PARSE_NUMBER_OF_POINTS_INDEX);
         }
         List<ColoredPoint> pointList = new ArrayList<ColoredPoint>(nCoordinates);
         double x = 0.0, y = 0.0;
@@ -83,20 +90,20 @@ public class Reader {
             if (scanner.hasNextDouble()) {
                 x = scanner.nextDouble();
             } else {
-                throw new IOException(UNEXPECTED_TYPE);
+                throw new ParseException(UNEXPECTED_TYPE, i);
             }
 
             if (scanner.hasNextDouble()) {
                 y = scanner.nextDouble();
             } else {
-                throw new IOException(UNEXPECTED_TYPE);
+                throw new ParseException(UNEXPECTED_TYPE, i);
             }
 
             if (scanner.hasNextInt()) {
                 color = scanner.nextInt();
-                if (!Color.validColor(color)) throw new IOException(UNEXPECTED_TYPE);
+                if (!Color.validColor(color)) throw new ParseException(UNEXPECTED_TYPE, i);
             } else {
-                throw new IOException(UNEXPECTED_TYPE);
+                throw new ParseException(UNEXPECTED_TYPE, i);
             }
 
             ColoredPoint p = ColoredPointFactory.create2dColoredPoint(x, y, color);

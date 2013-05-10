@@ -74,8 +74,9 @@ public enum Color {
     /**
      * Returns the enumeration type associated with the colorInt.
      *
-     * @param colorInt  Integer associated with an enumeration type.
-     * @return      Enumeration type associated with the colorInt.
+     * @param  colorInt Integer associated with an enumeration type.
+     *                  Valid colors are in the range of [0..4].
+     * @return          Enumeration type associated with the colorInt.
      */
     public static Color fromInt(int colorInt) throws IllegalArgumentException {
         Color color = intToColor.get(colorInt);

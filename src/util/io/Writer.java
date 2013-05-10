@@ -18,27 +18,19 @@ import java.util.List;
 public class Writer {
 
     /**
-     * Writes specified list of points to std:out.
+     * Writes specified list of polygons to std:out.
      *
-     * @param triangles A list of triangles to write to std:out.
+     * @param  polygons     A list of polygons to write to std:out.
+     * @throws IOException  Thrown, if writing to std:out failed.
      */
-    public static void writeTriangles(List<ColoredPolygon> triangles) {
+    public static void writeTriangles(List<ColoredPolygon> polygons) throws IOException {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        try {
-            writer.write(triangles.size() + "\n");
-            for (ColoredPolygon triangle : triangles) {
-               writer.write(triangle.toString() + "\n");
-            }
-        } catch (IOException e) {
-            System.err.println("Failed writing triangle. Stopping.");
+        writer.write(polygons.size() + "\n");
+        for (ColoredPolygon polygon : polygons) {
+            writer.write(polygon.toString() + "\n");
         }
 
-        try {
-            writer.close();
-        } catch (IOException e) {
-            System.err.println("Failed while closing outstream.");
-        }
-
+        writer.close();
     }
 }
