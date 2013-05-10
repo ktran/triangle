@@ -1,4 +1,4 @@
-package util.search;
+package search;
 
 import color.Color;
 import com.vividsolutions.jts.algorithm.CGAlgorithms;

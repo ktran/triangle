@@ -1,17 +1,14 @@
 package main;
 
-import com.vividsolutions.jts.algorithm.CGAlgorithms;
 import geometry.point.ColoredPoint;
 import geometry.polygon.triangle.ColoredPolygon;
-import geometry.polygon.triangle.ColoredTriangle;
 import util.io.Reader;
 import util.io.Writer;
-import util.search.TriangleSearch;
+import search.TriangleSearch;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
-import java.util.concurrent.ForkJoinPool;
 
 /**
  * Main class for starting up the point-disjoint triangle search.
