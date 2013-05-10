@@ -4,6 +4,7 @@ import color.Color;
 import com.vividsolutions.jts.algorithm.CGAlgorithms;
 import com.vividsolutions.jts.geom.Coordinate;
 import geometry.point.ColoredPoint;
+import geometry.point.ColoredPointFactory;
 import geometry.point.Point;
 import geometry.polygon.ColoredPolygon;
 import geometry.polygon.Polygon;
@@ -36,22 +37,63 @@ public class ColoredTriangle implements ColoredPolygon {
     private Color color;
 
     /**
+     * Returns an instance of a Colored Triangle given three points.
+     *
+     * @param p1    First point characterizing triangle.
+     * @param p2    Second point characterizing triangle.
+     * @param p3    Third point characterizing triangle.
+     * @return
+     * @throws IllegalArgumentException Thrown, if points are collinear or
+     *                                  differ in their colors.
+     */
+    public static ColoredTriangle fromPoints(ColoredPoint p1, ColoredPoint p2, ColoredPoint p3)
+                                            throws IllegalArgumentException {
+        return new ColoredTriangle(p1, p2, p3);
+    }
+
+    /**
+     *
+     * @param x1            First coordinate's x value.
+     * @param y1            First coordinate's y value.
+     * @param x2            Second coordinate's x value.
+     * @param y2            Second coordinate's y value.
+     * @param x3            Third coordinate's x value.
+     * @param y3            Third coordinate's x value.
+     * @param color Color   The color.
+     * @return
+     * @throws IllegalArgumentException Thrown, if points are collinear.
+     */
+    public static ColoredTriangle fromCoordinates(double x1, double y1, double x2, double y2,
+                                                  double x3, double y3, int color)
+                                                  throws IllegalArgumentException {
+        ColoredPoint p1 = ColoredPointFactory.create2dColoredPoint(x1, y1, color);
+        ColoredPoint p2 = ColoredPointFactory.create2dColoredPoint(x2, y2, color);
+        ColoredPoint p3 = ColoredPointFactory.create2dColoredPoint(x3, y3, color);
+
+        return new ColoredTriangle(p1, p2, p3);
+
+    }
+
+    /**
      * Creates a new colored triangle.
      *
      * @param p1                        First point characterizing the triangle.
      * @param p2                        Second point characterizing the triangle.
      * @param p3                        Third point characterizing the triangle.
-     * @throws IllegalStateException    Thrown, if the colors of points are incompatible.
+     * @throws IllegalArgumentException Thrown, if points are collinear or
+     *                                  differ in their colors.
      */
-    public ColoredTriangle(ColoredPoint p1, ColoredPoint p2, ColoredPoint p3) throws IllegalStateException {
+    public ColoredTriangle(ColoredPoint p1, ColoredPoint p2, ColoredPoint p3)
+            throws IllegalArgumentException {
         Color color = p1.getColor();
         if (color != p2.getColor() || color != p3.getColor()) {
-            throw new IllegalStateException("Incompatible point colors.");
+            throw new IllegalArgumentException("Incompatible point colors.");
         }
 
-        int orientation = CGAlgorithms.computeOrientation(p1.getCoordinate(), p2.getCoordinate(), p3.getCoordinate());
+        int orientation = CGAlgorithms.computeOrientation(p1.getCoordinate(),
+                p2.getCoordinate(), p3.getCoordinate());
         if (orientation == CGAlgorithms.COLLINEAR) {
-            throw new IllegalStateException("Points are collinear.");
+            throw new IllegalArgumentException("Points are collinear.");
         }
 
         this.color = color;
@@ -109,14 +151,17 @@ public class ColoredTriangle implements ColoredPolygon {
         Coordinate c1 = p1.getCoordinate();
         Coordinate c2 = p2.getCoordinate();
 
-        // Check if line segments intersect with each other.
-        double distance = CGAlgorithms.distanceLineLine(this.coordinates[0], this.coordinates[1], c1, c2);
+        // Check if line segments intersect each other.
+        double distance = CGAlgorithms.distanceLineLine(
+                this.coordinates[0], this.coordinates[1], c1, c2);
         if (distance == 0.0) return true;
 
-        distance = CGAlgorithms.distanceLineLine(this.coordinates[1], this.coordinates[2], c1, c2);
+        distance = CGAlgorithms.distanceLineLine(
+                this.coordinates[1], this.coordinates[2], c1, c2);
         if (distance == 0.0 ) return true;
 
-        CGAlgorithms.distanceLineLine(this.coordinates[0], this.coordinates[2], c1, c2);
+        CGAlgorithms.distanceLineLine(
+                this.coordinates[0], this.coordinates[2], c1, c2);
         if (distance == 0.0) return true;
 
         // Check if polygon encloses line segment
