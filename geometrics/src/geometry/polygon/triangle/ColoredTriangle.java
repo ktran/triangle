@@ -20,11 +20,6 @@ public class ColoredTriangle implements ColoredPolygon {
     public static final int N_POINTS = 3;
 
     /**
-     * Epsilon value used for comparing distances.
-     */
-    private static final double EPSILON = 0.1;
-
-    /**
      * The points that define a triangle.
      */
     private ColoredPoint[] points;
@@ -88,17 +83,19 @@ public class ColoredTriangle implements ColoredPolygon {
         Point[] points = polygon.getPoints();
         int nPoints = points.length;
 
-        // Does polygon intersect with any line of the triangle?
+        // Check if line segments intersect
         for (int i = 0; i < nPoints; ++i) {
             if (intersectsWithLine(points[i], points[(i+1) % nPoints])) {
                 return true;
             }
         }
 
+        // Check if triangle encloses polygon
         if (enclosesPoint(points[0])) {
             return true;
         }
 
+        // Check if polygon encloses triangle
         if (polygon.enclosesPoint(this.points[0])) {
             return true;
         }
@@ -111,23 +108,18 @@ public class ColoredTriangle implements ColoredPolygon {
         Coordinate c1 = p1.getCoordinate();
         Coordinate c2 = p2.getCoordinate();
 
-
+        // Check if line segments intersect with each other.
         double distance = CGAlgorithms.distanceLineLine(this.coordinates[0], this.coordinates[1], c1, c2);
-        if (distance < 0 + EPSILON) {
-            return true;
-        }
+        if (distance == 0.0) return true;
 
         distance = CGAlgorithms.distanceLineLine(this.coordinates[1], this.coordinates[2], c1, c2);
-        if (distance < 0 + EPSILON) {
-            return true;
-        }
+        if (distance == 0.0 ) return true;
 
         CGAlgorithms.distanceLineLine(this.coordinates[0], this.coordinates[2], c1, c2);
-        if (distance < 0 + EPSILON) {
-            return true;
-        }
+        if (distance == 0.0) return true;
 
-        //TODO: Check for point included!!
+        // Check if polygon encloses line segment
+        if (enclosesPoint(p1)) return true;
 
         return false;
     }
