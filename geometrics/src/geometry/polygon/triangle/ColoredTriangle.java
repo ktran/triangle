@@ -8,25 +8,36 @@ import geometry.point.Point;
 import geometry.polygon.Polygon;
 
 /**
+ * A colored triangle.
+ *
  * @author Kim-Anh Tran
  */
 public class ColoredTriangle implements ColoredPolygon {
 
+    /**
+     * Number of points that define a triangle.
+     */
     public static final int N_POINTS = 3;
 
+    /**
+     * Epsilon value used for comparing distances.
+     */
     private static final double EPSILON = 0.1;
 
-    protected ColoredPoint[] points;
+    /**
+     * The points that define a triangle.
+     */
+    private ColoredPoint[] points;
 
-    protected Color color;
-
-
+    /**
+     * The coordinates corresponding to each point.
+     */
     private Coordinate[] coordinates;
 
-    @Override
-    public Point[] getPoints() {
-        return this.points;
-    }
+    /**
+     * The triangle's color.
+     */
+    private Color color;
 
     /**
      * Creates a new colored triangle.
@@ -62,9 +73,14 @@ public class ColoredTriangle implements ColoredPolygon {
     }
 
     @Override
+    public Point[] getPoints() {
+        return this.points;
+    }
+
+    @Override
     public boolean enclosesPoint(Point point) {
-        Coordinate pointCoord = point.getCoordinate();
-        return CGAlgorithms.isPointInRing(pointCoord, this.coordinates);
+        Coordinate pointCoordinate = point.getCoordinate();
+        return CGAlgorithms.isPointInRing(pointCoordinate, this.coordinates);
     }
 
     @Override
@@ -110,6 +126,8 @@ public class ColoredTriangle implements ColoredPolygon {
         if (distance < 0 + EPSILON) {
             return true;
         }
+
+        //Check for point included!!
 
         return false;
     }

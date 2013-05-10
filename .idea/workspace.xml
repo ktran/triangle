@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6941566a-15e5-4db7-9fc6-1d639144762a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointFactory.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointImpl.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/point/Point.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/point/Point.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" afterPath="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" />
     </list>
     <ignored path="triangle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,11 +80,11 @@
     <file path="/ColoredPointImpl.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368178896015" ignored="false" />
     <file path="/Colored2DPoint.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367757467327" ignored="false" />
     <file path="/Colored.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368177720792" ignored="false" />
-    <file path="/Polygon.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368098389094" ignored="false" />
+    <file path="/Polygon.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368179701307" ignored="false" />
     <file path="/Triangle.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772191618" ignored="false" />
     <file path="/Writer.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368174860360" ignored="false" />
     <file path="/ColoredPointFactory.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368178875339" ignored="false" />
-    <file path="/ColoredTriangle.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368128923697" ignored="false" />
+    <file path="/ColoredTriangle.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368179719823" ignored="false" />
     <file path="/ColoredPolygon.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1367772185734" ignored="false" />
     <file path="/TriangleSearch.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368138050768" ignored="false" />
     <file path="/ColoredPoint.java" changelist="6941566a-15e5-4db7-9fc6-1d639144762a" time="1368178734685" ignored="false" />
@@ -161,10 +159,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Writer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/io/Writer.java">
+      <file leaf-file-name="ColoredTriangle.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+            <state line="129" column="36" selection-start="3855" selection-end="3855" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -178,6 +176,15 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#586#602#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Polygon.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="66" selection-start="1307" selection-end="1307" vertical-scroll-proportion="1.0806175">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -196,17 +203,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="17" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/io/Reader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="59" selection-start="3139" selection-end="3139" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -242,10 +238,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Point.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/point/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="52" selection-start="361" selection-end="361" vertical-scroll-proportion="0.46312177">
+            <state line="17" column="36" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -272,8 +268,6 @@
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/Triangle.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredPolygon.java" />
         <option value="$PROJECT_DIR$/src/util/Reader.java" />
-        <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" />
-        <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" />
         <option value="$PROJECT_DIR$/src/util/search/EuclidComparator.java" />
         <option value="$PROJECT_DIR$/src/util/search/TriangleSearch.java" />
         <option value="$PROJECT_DIR$/src/util/io/Writer.java" />
@@ -285,6 +279,8 @@
         <option value="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointFactory.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPointImpl.java" />
         <option value="$PROJECT_DIR$/geometrics/src/geometry/point/Point.java" />
+        <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java" />
+        <option value="$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java" />
       </list>
     </option>
   </component>
@@ -813,20 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="651" selection-end="651" vertical-scroll-proportion="0.72139305">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="32" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/search/EuclidComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="7" selection-start="414" selection-end="414" vertical-scroll-proportion="0.024875622">
@@ -881,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredPolygon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="17" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/point/ColoredPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="27" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
@@ -915,7 +890,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/point/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="52" selection-start="361" selection-end="361" vertical-scroll-proportion="0.46312177">
+        <state line="17" column="36" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredPolygon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="17" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/triangle/ColoredTriangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="36" selection-start="3855" selection-end="3855" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometrics/src/geometry/polygon/Polygon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="66" selection-start="1307" selection-end="1307" vertical-scroll-proportion="1.0806175">
           <folding />
         </state>
       </provider>
