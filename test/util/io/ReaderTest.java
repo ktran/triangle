@@ -19,7 +19,9 @@ import java.util.List;
  */
 public class ReaderTest {
 
+    // Used for double comparisons.
     private static final double EPSILON = 0.0001;
+
 
     @Test
     public void testReadPoints() {
@@ -33,7 +35,7 @@ public class ReaderTest {
 
     }
 
-
+    // Checks if the Reader instance detects a wrong passed type for color.
     private void testWrongRepresentation() {
         String input = "1 \n 0.1 3 e";
 
@@ -47,6 +49,7 @@ public class ReaderTest {
         }
     }
 
+    // Checks if the Reader instance detects an invalid color.
     private void testWrongColor() {
         String input = "1 \n 0.1 3.0 100";
 
@@ -60,6 +63,7 @@ public class ReaderTest {
         }
     }
 
+    // Checks if the Reader instance detects a wrong passed type for the x value.
     private void testWrongX() {
         // X is not a double
         String input = "1 \n e 0.2 0.3";
@@ -74,6 +78,7 @@ public class ReaderTest {
         }
     }
 
+    // Checks if the Reader instance detects a wrong passed type for the y value.
     private void testWrongY() {
         // Y is not a double
         String input = "1 \n 0.1 f 0.3";
@@ -87,9 +92,10 @@ public class ReaderTest {
         }
     }
 
+    // Checks if the Reader instance detects a wrong passed type for the number of points.
     private void testWrongNumber() {
-        // Number of poitns is not an integer
-        String input = "1.0 \n 0.1 f 0.3";
+        // Number of points is not passed as an integer type.
+        String input = "a \n 0.1 0.3 3";
         InputStream inStream = new ByteArrayInputStream(input.getBytes());
 
         try {
@@ -100,6 +106,7 @@ public class ReaderTest {
         }
     }
 
+    // Checks if the Reader instance detects the missing number of points to read.
     private void testMissingNumber() {
         // Number of points is missing.
         String input = "0.1 f 0.3";
@@ -113,6 +120,7 @@ public class ReaderTest {
         }
     }
 
+    // Checks if a valid input is parsed correctly.
     private void testValidString() {
         // Valid input.
         String input = "1 \n 0.1 0.3 3";
