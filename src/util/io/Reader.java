@@ -1,6 +1,7 @@
 package util.io;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -63,13 +64,14 @@ public class Reader {
      * x1 y2 c2
      * ..
      *
+     * @param  inStream The input stream to read from.
      * @return Collection of colored points.
      * @throws IOException Thrown, if input can not be parsed.
      * @see ColoredPoint
      */
-    public static List<ColoredPoint> readPoints() throws ParseException {
+    public static List<ColoredPoint> readPoints(InputStream inStream) throws ParseException {
         Scanner scanner;
-        scanner = new Scanner(System.in);
+        scanner = new Scanner(inStream);
         scanner.useLocale(Locale.US);
 
         int nCoordinates = 0;

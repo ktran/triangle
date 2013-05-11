@@ -26,12 +26,12 @@ public class TriangleMain {
         List<ColoredPoint> points;
 
         try {
-            points = Reader.readPoints();
+            points = Reader.readPoints(System.in);
 
             List<ColoredPolygon> triangles;
             triangles = new TriangleSearch(points).searchForTriangles();
 
-            Writer.writeTriangles(triangles);
+            Writer.writeTriangles(System.out, triangles);
 
         } catch (ParseException e) {
             System.err.println(e.getMessage());
