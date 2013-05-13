@@ -30,15 +30,29 @@ public class ColorTest {
         Assert.assertFalse(Color.validColor(Integer.MAX_VALUE));
     }
 
-    @Test (expected = IllegalArgumentException.class)
+    @Test
     public void testFromInt() {
+        testCorrectRepresentation();
+        testInvalidRepresentation();
+    }
+
+    // Checks if exception is thrown if fromInt() is called with an invalid integer.
+    private void testInvalidRepresentation() {
+        try {
+            Color.fromInt(Integer.MAX_VALUE);
+            Assert.fail("Should have thrown an exception. Invalid color.");
+        } catch (IllegalArgumentException e) {
+            //Success
+        }
+    }
+
+    // Checks if every valid color's int representation can be used
+    // to retrieve the color itself.
+    private void testCorrectRepresentation() {
         // Any color should be retrievable by its integer representation
         for (Color color : this.values) {
             int intRepresentation = color.getIntRepresentation();
             Assert.assertEquals(color, Color.fromInt(intRepresentation));
         }
-
-        // Invalid integer. Expected: IllegalArgumentException
-        Color.fromInt(Integer.MAX_VALUE);
     }
 }

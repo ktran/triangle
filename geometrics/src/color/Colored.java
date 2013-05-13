@@ -11,5 +11,5 @@ public interface Colored {
      *
      * @return  The color of the object.
      */
-    Color getColor();
+    public Color getColor();
 }

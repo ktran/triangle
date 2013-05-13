@@ -36,7 +36,7 @@ public enum Color {
     VIOLET(4);
 
     /**
-     * Map from integer value representation to color type.
+     * Maps from integer value representation to color type.
      */
     private static final Map<Integer, Color> intToColor = new HashMap<Integer, Color>();
     static {
@@ -76,6 +76,7 @@ public enum Color {
      * @param  colorInt Integer associated with an enumeration type.
      *                  Valid colors are in the range of [0..4].
      * @return          Enumeration type associated with the colorInt.
+     * @throws IllegalArgumentException If colorInt is out of range.
      */
     public static Color fromInt(int colorInt) throws IllegalArgumentException {
         Color color = intToColor.get(colorInt);

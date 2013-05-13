@@ -78,6 +78,8 @@ public class TriangleSearchTest {
     // Tests if any new point-disjoint triangle can be inserted.
     private void testNewTriangles(List<ColoredPoint> coloredPoints, List<ColoredPolygon> triangles) {
         Iterator<ColoredPoint> iterator = coloredPoints.iterator();
+
+        // Test every possible combination of points
         while (iterator.hasNext()) {
             if (coloredPoints.size() < 3) {
                 break;
@@ -93,6 +95,10 @@ public class TriangleSearchTest {
                     if (CGAlgorithms.computeOrientation(p1.getCoordinate(), p2.getCoordinate(), p3.getCoordinate())
                             != CGAlgorithms.COLLINEAR){
                         ColoredPolygon newTriangle = ColoredTriangle.fromPoints(p1, p2, p3);
+
+                        /* A triangle is invalid, if it intersects at least one already
+                         * existing triangle.
+                         */
                         boolean intersect = false;
                         for (ColoredPolygon triangle : triangles) {
                             if (triangle.intersectsWithPolygon(newTriangle)) {
