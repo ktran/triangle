@@ -45,6 +45,13 @@ public class Reader {
             "Unexpected type encountered. Specify point (x,y) and color " +
             "as double double int.";
 
+
+    /**
+     * Empty, private constructor. Prevents from initiating an object from Reader.
+     */
+    private Reader() {
+    }
+
     /**
      * Reads std:in and returns a collection of colored points.
      *

@@ -16,6 +16,12 @@ import java.util.List;
 public class Writer {
 
     /**
+     * Empty, private constructor. Prevents from initiating an object from Writer.
+     */
+    private Writer() {
+    }
+
+    /**
      * Writes specified list of polygons to specified stream.
      *
      *
