@@ -38,8 +38,13 @@ public class EuclidComparator implements Comparator<Point> {
         double distP1 = squaredDistancePointPoint(this.point, p1);
         double distP2 = squaredDistancePointPoint(this.point, p2);
 
-        if (distP1 < distP2)    return -1;
-        if (distP2 > distP1)    return 1;
+        if (distP1 < distP2) {
+            return -1;
+        }
+
+        if (distP2 > distP1) {
+            return 1;
+        }
 
         return 0;
     }

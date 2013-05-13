@@ -83,14 +83,16 @@ public class ColoredPointImpl implements ColoredPoint {
         StringTokenizer tokenizer = new StringTokenizer(stringRepresentation);
         int nTokens = tokenizer.countTokens();
 
-        if (nTokens < MIN_TOKENS || nTokens > MAX_TOKENS)
+        if (nTokens < MIN_TOKENS || nTokens > MAX_TOKENS) {
             throw new IllegalArgumentException("Unexpected number of tokens.");
+        }
 
         double x = Double.parseDouble(tokenizer.nextToken());
         double y = Double.parseDouble(tokenizer.nextToken());
         double z = Double.NaN;
-        if (nTokens == MAX_TOKENS)
+        if (nTokens == MAX_TOKENS) {
             z = Double.parseDouble(tokenizer.nextToken());
+        }
         int colorRepresentation = Integer.parseInt(tokenizer.nextToken());
 
         Coordinate pointCoordinate = new Coordinate(x, y, z);

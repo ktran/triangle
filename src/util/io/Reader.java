@@ -86,10 +86,11 @@ public class Reader {
 
         if (nCoordinates > 0) {
             // Reading end of line
-            if (scanner.hasNext())
+            if (scanner.hasNext()) {
                 scanner.nextLine();
-            else
+            } else {
                throw new ParseException(TOO_FEW, PARSE_NUMBER_OF_POINTS_INDEX);
+            }
         }
 
         // Reading and parsing lines of points

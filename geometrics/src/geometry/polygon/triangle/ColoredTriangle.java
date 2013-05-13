@@ -154,18 +154,26 @@ public class ColoredTriangle implements ColoredPolygon {
         // Check if line segments intersect each other.
         double distance = CGAlgorithms.distanceLineLine(
                 this.coordinates[0], this.coordinates[1], c1, c2);
-        if (distance == 0.0) return true;
+        if (distance == 0.0) {
+            return true;
+        }
 
         distance = CGAlgorithms.distanceLineLine(
                 this.coordinates[1], this.coordinates[2], c1, c2);
-        if (distance == 0.0 ) return true;
+        if (distance == 0.0 ) {
+            return true;
+        }
 
         CGAlgorithms.distanceLineLine(
                 this.coordinates[0], this.coordinates[2], c1, c2);
-        if (distance == 0.0) return true;
+        if (distance == 0.0) {
+            return true;
+        }
 
         // Check if polygon encloses line segment
-        if (enclosesPoint(p1)) return true;
+        if (enclosesPoint(p1)) {
+            return true;
+        }
 
         return false;
     }
