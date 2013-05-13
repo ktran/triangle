@@ -71,10 +71,8 @@ public class TriangleSearchTest {
 
         // Check, if any point-disjoint triangle can be inserted for any color
         for (List<ColoredPoint> coloredPoints : cPoints) {
-            //testNewTriangles(coloredPoints, triangles);
+            testNewTriangles(coloredPoints, triangles);
         }
-        testNewTriangles(cPoints.get(0), triangles);
-
     }
 
     // Tests if any new point-disjoint triangle can be inserted.
