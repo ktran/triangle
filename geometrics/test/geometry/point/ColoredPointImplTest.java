@@ -53,37 +53,44 @@ public class ColoredPointImplTest {
 
     }
 
+    // Checks if toValue() detects that too few tokens are provided.
     private void testTooFewArgs() {
         String representation = "3 2";
-        testExpectedException(representation);
+        testExceptionInValueOf(representation);
     }
 
+    // Checks if toValue() detects the existence of too many tokens are provided.
     private void testTooManyArgs() {
         String representation = "3 0.3 3 1 1" ;
-        testExpectedException(representation);
+        testExceptionInValueOf(representation);
     }
 
+    // Checks if toValue() detects the existence of too many tokens are provided.
     private void testWrongX() {
         String representation = "af 0.3 3";
-        testExpectedException(representation);
+        testExceptionInValueOf(representation);
     }
 
+    // Checks if toValue() detects that the y coordinate is no double.
     private void testWrongY() {
         String representation = "0 f 3";
-        testExpectedException(representation);
+        testExceptionInValueOf(representation);
     }
 
+    // Checks if toValue() detects that the z coordinate is no double.
     private void testWrongZ() {
         String representation = "0 0.3 a 3";
-        testExpectedException(representation);
+        testExceptionInValueOf(representation);
     }
 
+    // Checks if toValue() detects that the color is no integer.
     private void testWrongColor() {
         String representation = "0 0.3 a";
-        testExpectedException(representation);
+        testExceptionInValueOf(representation);
     }
 
-    private void testExpectedException(String representation) {
+    // Checks if toValue() throws an exception for a specified, illegal representation.
+    private void testExceptionInValueOf(String representation) {
         try {
             ColoredPointImpl.valueOf(representation);
             Assert.fail("Should have thrown an exception");
@@ -92,6 +99,7 @@ public class ColoredPointImplTest {
         }
     }
 
+    // Checks if toValue() passes with no exceptions while parsing a legal representation.
     private void testValid() {
         String representation = "0 0.3 3";
         try {
