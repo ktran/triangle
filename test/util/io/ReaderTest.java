@@ -3,9 +3,9 @@ package util.io;
 import color.Color;
 import com.vividsolutions.jts.geom.Coordinate;
 import geometry.point.ColoredPoint;
+import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
