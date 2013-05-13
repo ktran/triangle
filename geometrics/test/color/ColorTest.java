@@ -4,7 +4,9 @@ import geometry.polygon.triangle.ColoredTriangle;
 import junit.framework.Assert;
 import org.junit.Test;
 
-/**
+/*
+ * Tests the enumeration Color.
+ *
  * @author Kim-Anh Tran
  */
 public class ColorTest {

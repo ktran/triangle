@@ -7,7 +7,7 @@ import com.vividsolutions.jts.geom.Coordinate;
  *
  * @author Kim-Anh Tran
  */
-public interface Point extends Comparable {
+public interface Point extends Comparable<Point> {
 
     /**
      * Returns the coordinate of the point.

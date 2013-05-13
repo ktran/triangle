@@ -61,10 +61,10 @@ public enum Color {
     }
 
     /**
-     * Returns true, if the specified integer value correspons to a color type.
+     * Returns true, if the specified integer value corresponds to a color type.
      *
-     * @param colorInt  The integer value to check.
-     * @return          True, if a color is associated with the specified integer.
+     * @param  colorInt  The integer value to check.
+     * @return           True, if a color is associated with the specified integer.
      */
     public static boolean validColor(int colorInt) {
         return intToColor.containsKey(colorInt);

@@ -110,10 +110,9 @@ public class ColoredPointImpl implements ColoredPoint {
     }
 
     @Override
-    public int compareTo(Object point) {
-        ColoredPoint coloredPoint = (ColoredPoint) point;
-        Coordinate pointCoord = coloredPoint.getCoordinate();
-        return this.coordinate.compareTo(pointCoord);
+    public int compareTo(Point point) {
+        Coordinate pointCoordinate = point.getCoordinate();
+        return this.coordinate.compareTo(pointCoordinate);
     }
 
 }
