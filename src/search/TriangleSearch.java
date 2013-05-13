@@ -126,8 +126,8 @@ public class TriangleSearch {
                         ColoredPoint p3 = p3Potential.get(p3Index);
                         p3Potential.remove(p3Index);
 
-                        Coordinate[] coordinates = {p1.getCoordinate(), p2.getCoordinate()};
-                        if (!CGAlgorithms.isOnLine(p3.getCoordinate(), coordinates)) {
+                        if (CGAlgorithms.computeOrientation(p1.getCoordinate(), p2.getCoordinate(), p3.getCoordinate())
+                                != CGAlgorithms.COLLINEAR) {
                             ColoredPolygon triangle = new ColoredTriangle(p1, p2, p3);
                             if (disjoint(triangle)) {
                                 cPoints.remove(p2);
