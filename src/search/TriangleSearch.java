@@ -100,13 +100,13 @@ public class TriangleSearch {
             this.points.get(colorIndex).remove(p1Index);
 
             // Search for second triangle point
-            List<ColoredPoint> p2Potential = new ArrayList<ColoredPoint>(cPoints);
-            Collections.sort(p2Potential, new EuclidComparator(p1));
+            List<ColoredPoint> potentialPoints = new ArrayList<ColoredPoint>(cPoints);
+            Collections.sort(potentialPoints, new EuclidComparator(p1));
+            Iterator<ColoredPoint> p2Iterator = potentialPoints.iterator();
 
-            while (!p2Potential.isEmpty()) {
-                int p2Index = sndPoint(p1, p2Potential);
-                ColoredPoint p2 = p2Potential.get(p2Index);
-                p2Potential.remove(p2Index);
+            while (p2Iterator.hasNext()) {
+                ColoredPoint p2 = p2Iterator.next();
+                p2Iterator.remove();;
 
                 boolean validLine = true;
                 for (ColoredPolygon triangle : this.triangles) {
@@ -118,13 +118,9 @@ public class TriangleSearch {
                 if (validLine) {
 
                     // Search for third triangle point
-                    List<ColoredPoint> p3Potential = new ArrayList<ColoredPoint>(p2Potential);
-                    Collections.sort(p3Potential, new EuclidComparator(p2));
-
-                    while (!p3Potential.isEmpty()) {
-                        int p3Index = thdPoint(p2, p3Potential);
-                        ColoredPoint p3 = p3Potential.get(p3Index);
-                        p3Potential.remove(p3Index);
+                    Iterator<ColoredPoint> p3Iterator = potentialPoints.iterator();
+                    while (p3Iterator.hasNext()) {
+                        ColoredPoint p3 = p3Iterator.next();
 
                         if (CGAlgorithms.computeOrientation(p1.getCoordinate(), p2.getCoordinate(), p3.getCoordinate())
                                 != CGAlgorithms.COLLINEAR) {
