@@ -34,7 +34,7 @@ public class TriangleMain {
             Writer.writeTriangles(System.out, triangles);
 
         } catch (ParseException e) {
-            System.err.println(e.getMessage());
+            System.err.println(e.getMessage() + "Occurred at parsing point number " + e.getErrorOffset());
             System.exit(1);
 
         } catch (IOException e) {
