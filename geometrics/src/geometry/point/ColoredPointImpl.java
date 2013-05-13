@@ -50,9 +50,35 @@ public class ColoredPointImpl implements ColoredPoint {
         this.color = color;
     }
 
-    public static ColoredPointImpl valueOf(String stringRepresentation) {
-        double x, y, z;
-        int color;
+    /**
+     * Returns a 2d ColoredPoint.
+     *
+     * @param x     The x coordinate.
+     * @param y     The y coordinate.
+     * @param color A valid color.
+     * @return      A 2d colored point.
+     * @see         color.Color#validColor(int)
+     */
+    public static ColoredPointImpl create2D(double x, double y, int color) {
+        Coordinate coordinate = new Coordinate(x,y);
+        Color pointColor = Color.fromInt(color);
+        return new ColoredPointImpl(coordinate, pointColor);
+    }
+
+    /**
+     * Translates a String representation of a ColoredPointImpl to a ColoredPoint.
+     * String is formatted as follows:
+     * %f %f %f %d for a 3d point,
+     * %f %f %d    for a 2d point.
+     *
+     * @param stringRepresentation      The String value to parse.
+     * @return                          The corresponding ColoredPoint instance.
+     * @throws NumberFormatException    If String types did not match with
+     *                                  the expected types.
+     * @throws IllegalArgumentException If String contains wrong number of tokens.
+     */
+    public static ColoredPointImpl valueOf(String stringRepresentation)
+            throws NumberFormatException, IllegalArgumentException {
 
         StringTokenizer tokenizer = new StringTokenizer(stringRepresentation);
         int nTokens = tokenizer.countTokens();
@@ -60,9 +86,17 @@ public class ColoredPointImpl implements ColoredPoint {
         if (nTokens < MIN_TOKENS || nTokens > MAX_TOKENS)
             throw new IllegalArgumentException("Unexpected number of tokens.");
 
-            tokenizer.nextElement();
+        double x = Double.parseDouble(tokenizer.nextToken());
+        double y = Double.parseDouble(tokenizer.nextToken());
+        double z = Double.NaN;
+        if (nTokens == MAX_TOKENS)
+            z = Double.parseDouble(tokenizer.nextToken());
+        int colorRepresentation = Integer.parseInt(tokenizer.nextToken());
 
-        return null;
+        Coordinate pointCoordinate = new Coordinate(x, y, z);
+        Color color = Color.fromInt(colorRepresentation);
+
+        return new ColoredPointImpl(pointCoordinate, color);
     }
 
     @Override

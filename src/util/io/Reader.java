@@ -8,9 +8,8 @@ import java.util.Scanner;
 import java.util.Locale;
 import java.text.ParseException;
 
-import color.Color;
 import geometry.point.ColoredPoint;
-import geometry.point.ColoredPointFactory;
+import geometry.point.ColoredPointImpl;
 
 /**
  * Reader for parsing colored points.
@@ -18,20 +17,6 @@ import geometry.point.ColoredPointFactory;
  * @author Kim-Anh Tran
  */
 public class Reader {
-    /**
-     * The argument index of the x coordinate.
-     */
-    private static final int X_INDEX = 0;
-
-    /**
-     * The argument index of the y coordinate.
-     */
-    private static final int Y_INDEX = 1;
-
-    /**
-     * The argument index of the color.
-     */
-    private static final int COLOR_INDEX = 2;
 
     /**
      * Index where parses encounters the integer specifying
@@ -43,15 +28,21 @@ public class Reader {
      * Error message indicating a wrong type for specifying the
      * number of points to parse.
      */
-    private static String INTEGER_ERROR =
+    private static String MISSING_WRONG_POINT_NUMBERS =
             "Unexpected or no token. Specify number of points as int.";
+
+    /**
+     * Error message indicating that more points were expected.
+     */
+    private static String TOO_FEW =
+            "Too few points are specified.";
 
     /**
      * Error message indicating the encounter of an unexpected type while
      * parsing point and its color.
      */
     private static String UNEXPECTED_TYPE =
-            "Unexpected or no token. Specify point (x,y) and color " +
+            "Unexpected type encountered. Specify point (x,y) and color " +
             "as double double int.";
 
     /**
@@ -74,46 +65,60 @@ public class Reader {
         scanner = new Scanner(inStream);
         scanner.useLocale(Locale.US);
 
+        // Reading and parsing number of points
         int nCoordinates = 0;
         if (scanner.hasNext()) {
             if (scanner.hasNextInt()) {
                 nCoordinates = scanner.nextInt();
             } else {
-                throw new ParseException(INTEGER_ERROR, PARSE_NUMBER_OF_POINTS_INDEX);
+                throw new ParseException(MISSING_WRONG_POINT_NUMBERS, PARSE_NUMBER_OF_POINTS_INDEX);
             }
         } else {
-            throw new ParseException(INTEGER_ERROR, PARSE_NUMBER_OF_POINTS_INDEX);
+            throw new ParseException(MISSING_WRONG_POINT_NUMBERS, PARSE_NUMBER_OF_POINTS_INDEX);
         }
+
+        if (nCoordinates > 0) {
+            // Reading end of line
+            if (scanner.hasNext())
+                scanner.nextLine();
+            else
+               throw new ParseException(TOO_FEW, PARSE_NUMBER_OF_POINTS_INDEX);
+        }
+
+        // Reading and parsing lines of points
         List<ColoredPoint> pointList = new ArrayList<ColoredPoint>(nCoordinates);
-        double x = 0.0, y = 0.0;
-        int color = 0;
-
+        ColoredPoint point;
         for (int i = 0; i < nCoordinates; ++i) {
-            if (scanner.hasNextDouble()) {
-                x = scanner.nextDouble();
-            } else {
-                throw new ParseException(UNEXPECTED_TYPE, i);
-            }
 
-            if (scanner.hasNextDouble()) {
-                y = scanner.nextDouble();
+            if (scanner.hasNext()) {
+                point = read(scanner.nextLine(), i);
+                pointList.add(point);
             } else {
-                throw new ParseException(UNEXPECTED_TYPE, i);
+                throw new ParseException(TOO_FEW, i);
             }
-
-            if (scanner.hasNextInt()) {
-                color = scanner.nextInt();
-                if (!Color.validColor(color)) throw new ParseException(UNEXPECTED_TYPE, i);
-            } else {
-                throw new ParseException(UNEXPECTED_TYPE, i);
-            }
-
-            ColoredPoint p = ColoredPointFactory.create2dColoredPoint(x, y, color);
-            pointList.add(p);
         }
 
         scanner.close();
 
         return pointList;
+    }
+
+    /**
+     * Parses a String and returns an instance of ColoredPoint.
+     *
+     * @param value        String representation of ColoredPoint.
+     * @param errorOffset  The parsing error offset that is used.
+     * @return             A ColoredPoint instance, if successful.
+     * @throws ParseException If parsing failed.
+     */
+    private static ColoredPoint read(String value, int errorOffset)
+            throws ParseException {
+        try {
+            return ColoredPointImpl.valueOf(value);
+        } catch (NumberFormatException e) {
+            throw new ParseException(UNEXPECTED_TYPE, errorOffset);
+        } catch (IllegalArgumentException e) {
+            throw new ParseException(e.getMessage(), errorOffset);
+        }
     }
 }

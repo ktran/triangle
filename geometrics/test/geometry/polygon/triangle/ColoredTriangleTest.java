@@ -1,9 +1,7 @@
 package geometry.polygon.triangle;
 
-import com.vividsolutions.jts.geom.Coordinate;
 import geometry.point.ColoredPoint;
-import geometry.point.ColoredPointFactory;
-import geometry.polygon.ColoredPolygon;
+import geometry.point.ColoredPointImpl;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -37,19 +35,19 @@ public class ColoredTriangleTest {
         ColoredPoint point;
 
         // Point lies outside
-        point = ColoredPointFactory.create2dColoredPoint(0.0, 3.0, DUMMY_COLOR);
+        point = ColoredPointImpl.create2D(0.0, 3.0, DUMMY_COLOR);
         assertFalse(this.triangle.enclosesPoint(point));
 
         // Point is one of the triangle's points
-        point = ColoredPointFactory.create2dColoredPoint(0.0, 0.0, DUMMY_COLOR);
+        point = ColoredPointImpl.create2D(0.0, 0.0, DUMMY_COLOR);
         assertTrue(this.triangle.enclosesPoint(point));
 
         // Point lies on line segment
-        point = ColoredPointFactory.create2dColoredPoint(3.0, 3.0, DUMMY_COLOR);
+        point = ColoredPointImpl.create2D(3.0, 3.0, DUMMY_COLOR);
         assertTrue(this.triangle.enclosesPoint(point));
 
         // Point is enclosed
-        point = ColoredPointFactory.create2dColoredPoint(2.0, 0.5, DUMMY_COLOR);
+        point = ColoredPointImpl.create2D(2.0, 0.5, DUMMY_COLOR);
         assertTrue(this.triangle.enclosesPoint(point));
     }
 
@@ -87,28 +85,28 @@ public class ColoredTriangleTest {
         // Line segment does not intersect
         ColoredPoint p1;
         ColoredPoint p2;
-        p1 = ColoredPointFactory.create2dColoredPoint(10.0, 11.0, DUMMY_COLOR);
-        p2 = ColoredPointFactory.create2dColoredPoint(13.0, 11.0, DUMMY_COLOR);
+        p1 = ColoredPointImpl.create2D(10.0, 11.0, DUMMY_COLOR);
+        p2 = ColoredPointImpl.create2D(13.0, 11.0, DUMMY_COLOR);
         assertFalse(this.triangle.intersectsWithLine(p1, p2));
 
         // Line segment touches at point
-        p1 = ColoredPointFactory.create2dColoredPoint(3.0, 5.0, DUMMY_COLOR);
-        p2 = ColoredPointFactory.create2dColoredPoint(6.0, 6.0, DUMMY_COLOR);
+        p1 = ColoredPointImpl.create2D(3.0, 5.0, DUMMY_COLOR);
+        p2 = ColoredPointImpl.create2D(6.0, 6.0, DUMMY_COLOR);
         assertTrue(this.triangle.intersectsWithLine(p1, p2));
 
         // Line segment touches at line segment
-        p1 = ColoredPointFactory.create2dColoredPoint(3.0, 3.0, DUMMY_COLOR);
-        p2 = ColoredPointFactory.create2dColoredPoint(4.0, 6.0, DUMMY_COLOR);
+        p1 = ColoredPointImpl.create2D(3.0, 3.0, DUMMY_COLOR);
+        p2 = ColoredPointImpl.create2D(4.0, 6.0, DUMMY_COLOR);
         assertTrue(this.triangle.intersectsWithLine(p1, p2));
 
         // Line segment intersects
-        p1 = ColoredPointFactory.create2dColoredPoint(1.0, 1.0, DUMMY_COLOR);
-        p2 = ColoredPointFactory.create2dColoredPoint(10.0, 6.0, DUMMY_COLOR);
+        p1 = ColoredPointImpl.create2D(1.0, 1.0, DUMMY_COLOR);
+        p2 = ColoredPointImpl.create2D(10.0, 6.0, DUMMY_COLOR);
         assertTrue(this.triangle.intersectsWithLine(p1, p2));
 
         // Line segment is enclosed
-        p1 = ColoredPointFactory.create2dColoredPoint(0.5, 0.5, DUMMY_COLOR);
-        p2 = ColoredPointFactory.create2dColoredPoint(1.5, 1.5, DUMMY_COLOR);
+        p1 = ColoredPointImpl.create2D(0.5, 0.5, DUMMY_COLOR);
+        p2 = ColoredPointImpl.create2D(1.5, 1.5, DUMMY_COLOR);
         assertTrue(this.triangle.intersectsWithLine(p1, p2));
     }
 

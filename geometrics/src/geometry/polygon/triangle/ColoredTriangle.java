@@ -4,7 +4,7 @@ import color.Color;
 import com.vividsolutions.jts.algorithm.CGAlgorithms;
 import com.vividsolutions.jts.geom.Coordinate;
 import geometry.point.ColoredPoint;
-import geometry.point.ColoredPointFactory;
+import geometry.point.ColoredPointImpl;
 import geometry.point.Point;
 import geometry.polygon.ColoredPolygon;
 import geometry.polygon.Polygon;
@@ -66,9 +66,9 @@ public class ColoredTriangle implements ColoredPolygon {
     public static ColoredTriangle fromCoordinates(double x1, double y1, double x2, double y2,
                                                   double x3, double y3, int color)
                                                   throws IllegalArgumentException {
-        ColoredPoint p1 = ColoredPointFactory.create2dColoredPoint(x1, y1, color);
-        ColoredPoint p2 = ColoredPointFactory.create2dColoredPoint(x2, y2, color);
-        ColoredPoint p3 = ColoredPointFactory.create2dColoredPoint(x3, y3, color);
+        ColoredPoint p1 = ColoredPointImpl.create2D(x1, y1, color);
+        ColoredPoint p2 = ColoredPointImpl.create2D(x2, y2, color);
+        ColoredPoint p3 = ColoredPointImpl.create2D(x3, y3, color);
 
         return new ColoredTriangle(p1, p2, p3);
 

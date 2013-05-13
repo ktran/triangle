@@ -26,7 +26,7 @@ public class ColoredPointFactoryTest {
         int dummyColor = 0;
 
         // The constructed ColoredPoint should be as expected
-        ColoredPoint point = ColoredPointFactory.create2dColoredPoint(x, y, dummyColor);
+        ColoredPoint point = ColoredPointImpl.create2D(x, y, dummyColor);
         Coordinate pointCoordinates = point.getCoordinate();
         assertTrue(pointCoordinates.x - x < EPSILON);
         assertTrue(pointCoordinates.y - y < EPSILON);
