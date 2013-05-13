@@ -5,7 +5,7 @@ import geometry.point.ColoredPointImpl;
 import junit.framework.Assert;
 import org.junit.Test;
 
-/**
+/*
  * Tests an instance of ColoredTriangle.
  *
  * @author Kim-Anh Tran
