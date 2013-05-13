@@ -2,9 +2,9 @@ package main;
 
 import geometry.point.ColoredPoint;
 import geometry.polygon.ColoredPolygon;
+import search.TriangleSearch;
 import util.io.Reader;
 import util.io.Writer;
-import search.TriangleSearch;
 
 import java.io.IOException;
 import java.text.ParseException;

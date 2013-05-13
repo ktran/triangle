@@ -7,11 +7,7 @@ import geometry.point.ColoredPoint;
 import geometry.polygon.ColoredPolygon;
 import geometry.polygon.triangle.ColoredTriangle;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 
 /**

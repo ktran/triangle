@@ -1,6 +1,5 @@
 package color;
 
-import geometry.polygon.triangle.ColoredTriangle;
 import junit.framework.Assert;
 import org.junit.Test;
 

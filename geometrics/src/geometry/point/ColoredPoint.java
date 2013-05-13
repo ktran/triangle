@@ -1,8 +1,6 @@
 package geometry.point;
 
-import color.Color;
 import color.Colored;
-import geometry.point.Point;
 
 /**
  * Defines a colored point.

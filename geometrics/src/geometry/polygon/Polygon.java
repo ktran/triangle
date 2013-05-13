@@ -1,6 +1,5 @@
 package geometry.polygon;
 
-import com.vividsolutions.jts.geom.Coordinate;
 import geometry.point.Point;
 
 /**

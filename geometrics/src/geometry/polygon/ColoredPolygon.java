@@ -1,7 +1,6 @@
 package geometry.polygon;
 
 import color.Colored;
-import geometry.polygon.Polygon;
 
 /**
  * Represents colored polygons.
