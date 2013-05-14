@@ -89,24 +89,23 @@ public class TriangleSearch {
         List<ColoredPoint> cPoints = this.points.get(colorIndex);
 
         // Search as long as enough points exist for creating a triangle
-        while(this.points.get(colorIndex).size() >= 3) {
-            int p1Index = firstPoint(color);
-            ColoredPoint p1 = cPoints.get(p1Index);
+        while(cPoints.size() >= 3) {
+            ColoredPoint p1 = cPoints.get(0);
 
             /*
              * Remove p1 for further consideration: Either p1 will be part of a 
              * triangle or not compatible with other points.
              */
-            this.points.get(colorIndex).remove(p1Index);
+            cPoints.remove(0);
 
-            // Search for second triangle point
+            // Pick second triangle point. Take closest ones first.
             List<ColoredPoint> potentialPoints = new ArrayList<ColoredPoint>(cPoints);
             Collections.sort(potentialPoints, new EuclidComparator(p1));
             Iterator<ColoredPoint> p2Iterator = potentialPoints.iterator();
 
             while (p2Iterator.hasNext()) {
                 ColoredPoint p2 = p2Iterator.next();
-                p2Iterator.remove();;
+                p2Iterator.remove();
 
                 boolean validLine = true;
                 for (ColoredPolygon triangle : this.triangles) {
@@ -117,7 +116,7 @@ public class TriangleSearch {
                 }
                 if (validLine) {
 
-                    // Search for third triangle point
+                    // Pick third triangle point. Pick closest one to p1.
                     Iterator<ColoredPoint> p3Iterator = potentialPoints.iterator();
                     while (p3Iterator.hasNext()) {
                         ColoredPoint p3 = p3Iterator.next();
@@ -133,7 +132,6 @@ public class TriangleSearch {
                         }
                     }
                 }
-
             }
         }
 
@@ -173,14 +171,6 @@ public class TriangleSearch {
         return true;
     }
 
-    private int thdPoint(ColoredPoint sndPoint, List<ColoredPoint> potentialPoints) {
-        return 0;  //To change body of created methods use File | Settings | File Templates.
-    }
-
-    private int sndPoint(ColoredPoint fstPoint, List<ColoredPoint> potentialPoints) {
-        return 0;  //To change body of created methods use File | Settings | File Templates.
-    }
-
     /**
      * Selects the next color to be considered for finding a new triangle.
      * 
@@ -217,10 +207,6 @@ public class TriangleSearch {
         }
                                         
         return occurrences;
-    }
-
-    private int firstPoint(Color color) {
-        return 0;
     }
 
     /**
