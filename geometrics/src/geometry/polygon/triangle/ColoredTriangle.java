@@ -37,44 +37,6 @@ public class ColoredTriangle implements ColoredPolygon {
     private Color color;
 
     /**
-     * Returns an instance of a Colored Triangle given three points.
-     *
-     * @param p1    First point characterizing triangle.
-     * @param p2    Second point characterizing triangle.
-     * @param p3    Third point characterizing triangle.
-     * @return
-     * @throws IllegalArgumentException Thrown, if points are collinear or
-     *                                  differ in their colors.
-     */
-    public static ColoredTriangle fromPoints(ColoredPoint p1, ColoredPoint p2, ColoredPoint p3)
-                                            throws IllegalArgumentException {
-        return new ColoredTriangle(p1, p2, p3);
-    }
-
-    /**
-     *
-     * @param x1            First coordinate's x value.
-     * @param y1            First coordinate's y value.
-     * @param x2            Second coordinate's x value.
-     * @param y2            Second coordinate's y value.
-     * @param x3            Third coordinate's x value.
-     * @param y3            Third coordinate's x value.
-     * @param color Color   The color.
-     * @return
-     * @throws IllegalArgumentException Thrown, if points are collinear.
-     */
-    public static ColoredTriangle fromCoordinates(double x1, double y1, double x2, double y2,
-                                                  double x3, double y3, int color)
-                                                  throws IllegalArgumentException {
-        ColoredPoint p1 = ColoredPointImpl.create2D(x1, y1, color);
-        ColoredPoint p2 = ColoredPointImpl.create2D(x2, y2, color);
-        ColoredPoint p3 = ColoredPointImpl.create2D(x3, y3, color);
-
-        return new ColoredTriangle(p1, p2, p3);
-
-    }
-
-    /**
      * Creates a new colored triangle.
      *
      * @param p1                        First point characterizing the triangle.
@@ -110,6 +72,45 @@ public class ColoredTriangle implements ColoredPolygon {
         coordinates[N_POINTS] = this.points[0].getCoordinate();
     }
 
+    /**
+     * Returns an instance of a ColoredTriangle given three points.
+     *
+     * @param p1    First point characterizing triangle.
+     * @param p2    Second point characterizing triangle.
+     * @param p3    Third point characterizing triangle.
+     * @return
+     * @throws IllegalArgumentException Thrown, if points are collinear or
+     *                                  differ in their colors.
+     */
+    public static ColoredTriangle fromPoints(ColoredPoint p1, ColoredPoint p2, ColoredPoint p3)
+                                            throws IllegalArgumentException {
+        return new ColoredTriangle(p1, p2, p3);
+    }
+
+    /**
+     * Returns an instance of a ColoredTriangle given its coordinate values.
+     *
+     * @param x1            First coordinate's x value.
+     * @param y1            First coordinate's y value.
+     * @param x2            Second coordinate's x value.
+     * @param y2            Second coordinate's y value.
+     * @param x3            Third coordinate's x value.
+     * @param y3            Third coordinate's x value.
+     * @param color Color   The color.
+     * @return              A ColoredTriangle instance.
+     * @throws IllegalArgumentException Thrown, if points are collinear.
+     */
+    public static ColoredTriangle fromCoordinates(double x1, double y1, double x2, double y2,
+                                                  double x3, double y3, int color)
+                                                  throws IllegalArgumentException {
+        ColoredPoint p1 = ColoredPointImpl.create2D(x1, y1, color);
+        ColoredPoint p2 = ColoredPointImpl.create2D(x2, y2, color);
+        ColoredPoint p3 = ColoredPointImpl.create2D(x3, y3, color);
+
+        return new ColoredTriangle(p1, p2, p3);
+
+    }
+
     @Override
     public Point[] getPoints() {
         return this.points;
@@ -123,18 +124,18 @@ public class ColoredTriangle implements ColoredPolygon {
 
     @Override
     public boolean intersectsWithPolygon(Polygon polygon) {
-        Point[] points = polygon.getPoints();
-        int nPoints = points.length;
+        Point[] polygonPoints = polygon.getPoints();
+        int nPoints = polygonPoints.length;
 
         // Check if line segments intersect
         for (int i = 0; i < nPoints; ++i) {
-            if (intersectsWithLine(points[i], points[(i+1) % nPoints])) {
+            if (intersectsWithLine(polygonPoints[i], polygonPoints[(i+1) % nPoints])) {
                 return true;
             }
         }
 
         // Check if triangle encloses polygon
-        if (enclosesPoint(points[0])) {
+        if (enclosesPoint(polygonPoints[0])) {
             return true;
         }
 

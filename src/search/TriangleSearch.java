@@ -74,8 +74,9 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
     }
 
     public static List<ColoredPolygon> searchForTriangles(List<ColoredPoint> points) {
+        int nPoints = points.size();
         List<Boolean> enclosed = new ArrayList<Boolean>();
-        for (int i = 0; i < points.size();++i) {
+        for (int i = 0; i < nPoints;++i) {
             enclosed.add(false);
         }
         int currentDepth = 0;

@@ -32,9 +32,6 @@ public class TriangleSearchTest {
     // Test 2d points.
     private List<ColoredPoint> points;
 
-    // TriangleSearch instance to test.
-    private TriangleSearch search;
-
     @Before
     public void setUp() {
         try {
@@ -50,7 +47,7 @@ public class TriangleSearchTest {
     @Test
     public void testSearchForTriangles() throws Exception {
         int processors = Runtime.getRuntime().availableProcessors();
-        List<ColoredPolygon> triangles = TriangleSearch.searchForTriangles(points);
+        List<ColoredPolygon> triangles = TriangleSearch.searchForTriangles(this.points);
 
         // Remove all points that are already belonging to a triangle
         for (ColoredPolygon triangle : triangles) {

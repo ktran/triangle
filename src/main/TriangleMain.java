@@ -24,13 +24,10 @@ public class TriangleMain {
      * @param args // None
      */
     public static void main(String[] args) {
-        List<ColoredPoint> points;
-
         try {
-            points = Reader.readPoints(System.in);
+            List<ColoredPoint> points = Reader.readPoints(System.in);
 
             List<ColoredPolygon> triangles;
-            int processors = Runtime.getRuntime().availableProcessors();
             triangles = TriangleSearch.searchForTriangles(points);
 
             Writer.writeTriangles(System.out, triangles);
