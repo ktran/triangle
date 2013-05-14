@@ -9,9 +9,9 @@ no triangle can be inserted without breaking one of the following rules:
 
 Modules
 -------------
-geometrics: Contains basic geometric shapes.
+geometry:   Contains basic geometric shapes.
 triangle:   Contains the main start up class, the search functionality and basic utils.
-jts:        Library for handling geometric calculations, see http://tsusiatsoftware.net/jts/main.html
+jts:        Library for handling geometric calculations, see http://tsusiatsoftware.net/jts/main.html.
 
 
 Implementation
