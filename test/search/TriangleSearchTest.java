@@ -40,7 +40,6 @@ public class TriangleSearchTest {
         try {
             FileInputStream inputStream = new FileInputStream(TEST_FILE);
             this.points = Reader.readPoints(inputStream);
-            this.search = new TriangleSearch(this.points, 0);
         } catch (ParseException e) {
             Assert.fail("Failed reading test data from file.");
         } catch (FileNotFoundException e) {
@@ -51,8 +50,7 @@ public class TriangleSearchTest {
     @Test
     public void testSearchForTriangles() throws Exception {
         int processors = Runtime.getRuntime().availableProcessors();
-        ForkJoinPool forkJoinPool = new ForkJoinPool(processors);
-        List<ColoredPolygon> triangles = forkJoinPool.invoke(this.search);
+        List<ColoredPolygon> triangles = TriangleSearch.searchForTriangles(points);
 
         // Remove all points that are already belonging to a triangle
         for (ColoredPolygon triangle : triangles) {

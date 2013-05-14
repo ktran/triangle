@@ -31,9 +31,7 @@ public class TriangleMain {
 
             List<ColoredPolygon> triangles;
             int processors = Runtime.getRuntime().availableProcessors();
-            ForkJoinPool forkJoinPool = new ForkJoinPool(processors);
-            TriangleSearch search = new TriangleSearch(points, 0);
-            triangles = forkJoinPool.invoke(search);
+            triangles = TriangleSearch.searchForTriangles(points);
 
             Writer.writeTriangles(System.out, triangles);
 
