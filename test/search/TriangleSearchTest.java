@@ -17,6 +17,7 @@ import java.text.ParseException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ForkJoinPool;
 
 /*
  * Tests the search algorithm for finding triangles in a 2d set of points.
@@ -39,7 +40,7 @@ public class TriangleSearchTest {
         try {
             FileInputStream inputStream = new FileInputStream(TEST_FILE);
             this.points = Reader.readPoints(inputStream);
-            this.search = new TriangleSearch(this.points);
+            this.search = new TriangleSearch(this.points, 0);
         } catch (ParseException e) {
             Assert.fail("Failed reading test data from file.");
         } catch (FileNotFoundException e) {
@@ -49,7 +50,9 @@ public class TriangleSearchTest {
 
     @Test
     public void testSearchForTriangles() throws Exception {
-        List<ColoredPolygon> triangles = this.search.searchForTriangles();
+        int processors = Runtime.getRuntime().availableProcessors();
+        ForkJoinPool forkJoinPool = new ForkJoinPool(processors);
+        List<ColoredPolygon> triangles = forkJoinPool.invoke(this.search);
 
         // Remove all points that are already belonging to a triangle
         for (ColoredPolygon triangle : triangles) {

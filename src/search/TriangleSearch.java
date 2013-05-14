@@ -4,10 +4,12 @@ import color.Color;
 import com.vividsolutions.jts.algorithm.CGAlgorithms;
 import com.vividsolutions.jts.geom.Coordinate;
 import geometry.point.ColoredPoint;
+import geometry.point.ColoredPointImpl;
 import geometry.polygon.ColoredPolygon;
 import geometry.polygon.triangle.ColoredTriangle;
 
 import java.util.*;
+import java.util.concurrent.RecursiveTask;
 
 
 /**
@@ -16,7 +18,10 @@ import java.util.*;
  *
  * @author Kim-Anh Tran
  */
-public class TriangleSearch {
+public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
+
+    public static final int SPLIT_DEPTH = 5;
+    public static final int MAX_POINTS = 3000;
 
     /**
      * The collection of 2D points that are considered for triangle creation.
@@ -28,13 +33,29 @@ public class TriangleSearch {
      */
     private List<ColoredPolygon> triangles;
 
+    private int splitDepth;
+
+    double min;
+
+    double max;
+
     /**
      * Creates a new triangle search instance for searching
      * triangles within the specified collection f 2d points.
      *
      * @param points    The 2d points.
      */
-    public TriangleSearch(List<ColoredPoint> points) {
+    public TriangleSearch(List<ColoredPoint> points, int splitDepth) {
+        this.splitDepth = splitDepth;
+        if (! points.isEmpty()) {
+        if (splitDepth % 2 != 0) {
+            this.max = Collections.max(points, YComparator.YCOMPARATOR).getCoordinate().y;
+            this.min =  Collections.min(points, YComparator.YCOMPARATOR).getCoordinate().y;
+        } else {
+            this.max = Collections.max(points, XComparator.XCOMPARATOR).getCoordinate().x;
+            this.min =  Collections.min(points, XComparator.XCOMPARATOR).getCoordinate().x;
+        }
+        }
         int nColors = Color.values().length;
         this.points = new ArrayList<List<ColoredPoint>>(nColors);
 
@@ -47,24 +68,12 @@ public class TriangleSearch {
             colorIndex = point.getColor().getIntRepresentation();
             this.points.get(colorIndex).add(point);
         }
-
-        this.triangles = new LinkedList<ColoredPolygon>();
-    }
-
-    /**
-     * Returns a collection of triangles found among the 2d points.
-     *
-     * @return  A collection of triangles.
-     */
-    public List<ColoredPolygon> searchForTriangles() {
-        search();
-        return this.triangles;
     }
 
     /**
      * Starts the triangle search.
      */
-    private void search() {
+    public List<ColoredPolygon> search() {
 
         while (enoughPointsLeft()) {
             Color color = nextColor();
@@ -75,6 +84,7 @@ public class TriangleSearch {
                 removeEnclosedPoints(triangle);
             }
         }
+        return this.triangles;
     }
 
     /**
@@ -227,4 +237,66 @@ public class TriangleSearch {
     }
 
 
+    @Override
+    protected List<ColoredPolygon> compute() {
+        int nPoints = 0;
+        for (List<ColoredPoint> p : this.points) {
+            nPoints += p.size();
+        }
+        if (this.splitDepth < SPLIT_DEPTH && nPoints > MAX_POINTS) {
+            // Separate task. Find median
+            int nColors = Color.values().length;
+
+            List<ColoredPoint> leftList = new LinkedList<ColoredPoint>();
+            List<ColoredPoint> rightList = new LinkedList<ColoredPoint>();
+
+            double split = this.min + (this.max - this.min) / 2;
+            if (this.splitDepth %2 == 0) {
+                for (List<ColoredPoint> cPoints : this.points) {
+                    for (ColoredPoint point : cPoints) {
+                        if (point.getCoordinate().x <= split) {
+                            leftList.add(point);
+                        } else {
+                            rightList.add(point);
+                        }
+
+                    }
+                }
+            } else {
+                for (List<ColoredPoint> cPoints : this.points) {
+                    for (ColoredPoint point : cPoints) {
+                        if (point.getCoordinate().y <= split) {
+                            leftList.add(point);
+                        } else {
+                            rightList.add(point);
+                        }
+
+                    }
+                }
+
+            }
+
+            System.out.println("split. elements : "+ nPoints + " min max yVertical" + this.min + " " + this.max + " " +this.splitDepth);
+
+            TriangleSearch leftSearch = new TriangleSearch(leftList, splitDepth + 1);
+            TriangleSearch rightSearch = new TriangleSearch(rightList, splitDepth + 1);
+
+            leftSearch.fork();
+            rightSearch.compute():
+
+           this.triangles = leftSearch.join();
+           this.triangles.addAll(rightSearch.join());
+
+            for (ColoredPolygon triangle : this.triangles) {
+                removeEnclosedPoints(triangle);
+            }
+
+        } else {
+            this.triangles = new LinkedList<ColoredPolygon>();
+            search();
+        }
+
+        search();
+        return this.triangles;
+    }
 }

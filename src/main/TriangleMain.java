@@ -9,6 +9,7 @@ import util.io.Writer;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
+import java.util.concurrent.ForkJoinPool;
 
 /**
  * Main class for starting up the point-disjoint triangle search.
@@ -29,7 +30,10 @@ public class TriangleMain {
             points = Reader.readPoints(System.in);
 
             List<ColoredPolygon> triangles;
-            triangles = new TriangleSearch(points).searchForTriangles();
+            int processors = Runtime.getRuntime().availableProcessors();
+            ForkJoinPool forkJoinPool = new ForkJoinPool(processors);
+            TriangleSearch search = new TriangleSearch(points, 0);
+            triangles = forkJoinPool.invoke(search);
 
             Writer.writeTriangles(System.out, triangles);
 
