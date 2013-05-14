@@ -112,7 +112,7 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
 
             if (triangle != null) {
                 this.triangles.add(triangle);
-                removeAndMark(availablePoints, triangle);
+                markAndRemoveEnclosedPoints(availablePoints, triangle);
             }
         }
     }
@@ -206,15 +206,19 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
     }
 
     /**
-     * Removes all points from the considered point list that are
-     * enclosed by the specified triangle.
-     * 
+     * Removes all points from the currently considered point list that are
+     * enclosed by the specified triangle. The enclosed fields are updated
+     * accordingly.
+     *
+     * @param cPoints   The currently considered points for triangle creation.
      * @param triangle  The triangle that might enclose points.
      */
-    private void removeAndMark(List<ColoredPoint> cPoints, ColoredPolygon triangle) {
+    private void markAndRemoveEnclosedPoints(List<ColoredPoint> cPoints, ColoredPolygon triangle) {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         EnclosedPointsFinder findEnclosePoints = new EnclosedPointsFinder(cPoints, triangle);
         List<ColoredPoint> enclosedPoints = forkJoinPool.invoke(findEnclosePoints);
+        forkJoinPool.shutdown();
+
         Iterator<ColoredPoint> iterator = enclosedPoints.iterator();
         while (iterator.hasNext()) {
             ColoredPoint point = iterator.next();
@@ -249,7 +253,8 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
         int maxOccurrence = occurrences[0];
         int colorIndex = 0;
         int nColors = Color.values().length;
-        
+
+        // Select color that is contained the most
         for (int i = 1; i < nColors; ++i) {
             if (maxOccurrence < occurrences[i]) {
                 maxOccurrence = occurrences[i];
@@ -262,7 +267,8 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
     /**
      * Returns a list of numbers indicating how many
      * points are still to be considered, ordered by their color.
-     * 
+     *
+     * @param  cPoints The points currently considered for triangle creation.
      * @return  Array indicating how many points of each color are not yet
      *          considered for triangle creation.
      */
@@ -273,7 +279,8 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
         int nPoints = this.points.size();
         for (int i = 0; i < nPoints; ++i) {
             if (!this.enclosed.get(i)) {
-                ++occurrences[this.points.get(i).getColor().getIntRepresentation()];
+                int colorIndex = this.points.get(i).getColor().getIntRepresentation();
+                ++occurrences[colorIndex];
             }
         }
                                         
@@ -283,13 +290,15 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
     /**
      * Checks if enough points are available in order to
      * find a new triangle.
-     * 
+     *
+     * @param  cPoints  The points that are currently considered for triangle creation.
      * @return  True, if enough points are left for creating a triangle.
      */
     private boolean enoughPointsLeft(List<ColoredPoint> cPoints) {
         boolean enoughPoints = false;
         int[] colorOccurrence = colorOccurrence(cPoints);
 
+        // As long as 3 points of one color remain, we might find another triangle.
         for (int occurrence : colorOccurrence) {
             if (occurrence >= ColoredTriangle.N_POINTS) {
                 enoughPoints = true;
@@ -304,21 +313,27 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
     protected List<ColoredPolygon> compute() {
         int nPoints = this.points.size();
 
+        // Split task if too big.
         if (this.splitDepth < SPLIT_DEPTH && nPoints > MAX_POINTS) {
             int split = nPoints/2;
 
+            /* Split points vertically. Creating triangles in isolation will not
+             * interfere with each other, as points are sorted.
+             */
             TriangleSearch leftSearch = new TriangleSearch(this.points.subList(0, split), this.enclosed.subList(0, split), splitDepth + 1);
             TriangleSearch rightSearch = new TriangleSearch(this.points.subList(split, nPoints), this.enclosed.subList(split, nPoints), splitDepth + 1);
 
             leftSearch.fork();
 
-           this.triangles = leftSearch.join();
-           this.triangles.addAll(rightSearch.compute());
+            this.triangles = leftSearch.join();
+            this.triangles.addAll(rightSearch.compute());
 
         } else {
+            // If task can be computed without splitting, create a new list.
             this.triangles = new LinkedList<ColoredPolygon>();
         }
 
+        // Search for new triangles.
         search();
         return this.triangles;
     }
