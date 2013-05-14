@@ -86,7 +86,10 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
 
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         TriangleSearch search = new TriangleSearch(points, enclosed, currentDepth);
-        return forkJoinPool.invoke(search);
+        List<ColoredPolygon> foundTriangles = forkJoinPool.invoke(search);
+        forkJoinPool.shutdown();
+
+        return foundTriangles;
     }
 
     /**
