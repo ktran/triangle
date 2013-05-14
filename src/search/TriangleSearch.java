@@ -5,7 +5,8 @@ import com.vividsolutions.jts.algorithm.CGAlgorithms;
 import geometry.point.ColoredPoint;
 import geometry.polygon.ColoredPolygon;
 import geometry.polygon.triangle.ColoredTriangle;
-import search.parallel.EnclosePoint;
+import util.parallel.EnclosedPointsFinder;
+import util.comparator.EuclidComparator;
 
 import java.util.*;
 import java.util.concurrent.ForkJoinPool;
@@ -181,7 +182,7 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
      */
     private void removeAndMark(List<ColoredPoint> cPoints, ColoredPolygon triangle) {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
-        EnclosePoint findEnclosePoints = new EnclosePoint(cPoints, triangle);
+        EnclosedPointsFinder findEnclosePoints = new EnclosedPointsFinder(cPoints, triangle);
         List<ColoredPoint> enclosedPoints = forkJoinPool.invoke(findEnclosePoints);
         Iterator<ColoredPoint> iterator = enclosedPoints.iterator();
         while (iterator.hasNext()) {

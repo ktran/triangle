@@ -1,4 +1,4 @@
-package search;
+package util.comparator;
 
 import com.vividsolutions.jts.geom.Coordinate;
 import geometry.point.Point;
