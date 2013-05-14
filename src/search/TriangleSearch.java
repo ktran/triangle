@@ -120,16 +120,20 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
     /**
      * Searches for the next available triangle. If it returns null,
      * no triangle could be found for the specified color.
-     * 
+     *
+     * @param   cPoints The collection of points that is currently considered for
+     *                  triangle creation.
      * @param   color   The color specifying which colored triangle to search for.
      * @return          Triangle, if found for the specified color. Null, otherwise.
      */
     private ColoredPolygon nextTriangle(List<ColoredPoint> cPoints, Color color) {
-        // Search as long as enough points exist for creating a triangle
         int[] colorOccurrence = colorOccurrence(cPoints);
         int numberOfColoredPoints = colorOccurrence[color.getIntRepresentation()];
+
+        // Search as long as enough points exist for creating a triangle
         while(numberOfColoredPoints >= 3) {
-            ListIterator<ColoredPoint> iterator = cPoints.listIterator();
+
+            Iterator<ColoredPoint> iterator = cPoints.iterator();
             ColoredPoint p1 = getNextWithColor(iterator, color);
 
             /*
@@ -140,11 +144,10 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
             markAsEnclosed(p1);
             --numberOfColoredPoints;
 
-            // Pick second triangle point. Take closest ones first.
+            // Pick second triangle point. Take closest ones to p1 first.
             List<ColoredPoint> potentialPoints = new ArrayList<ColoredPoint>(cPoints);
-            potentialPoints.remove(p1);
             Collections.sort(potentialPoints, new EuclidComparator(p1));
-            ListIterator<ColoredPoint> p2Iterator = potentialPoints.listIterator();
+            Iterator<ColoredPoint> p2Iterator = potentialPoints.iterator();
 
             while (p2Iterator.hasNext()) {
                 ColoredPoint p2 = getNextWithColor(p2Iterator, color);
@@ -153,6 +156,7 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
                 }
                 p2Iterator.remove();
 
+                // Check if the line segment between p1 and p2 conflicts with any triangle.
                 boolean validLine = true;
                 for (ColoredPolygon triangle : this.triangles) {
                     if (triangle.intersectsWithLine(p1, p2)) {
@@ -161,14 +165,16 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
                     }
                 }
                 if (validLine) {
+
                     // Pick third triangle point. Pick closest one to p1.
-                    ListIterator<ColoredPoint> p3Iterator = potentialPoints.listIterator();
+                    Iterator<ColoredPoint> p3Iterator = potentialPoints.iterator();
                     while (p3Iterator.hasNext()) {
                         ColoredPoint p3 = getNextWithColor(p3Iterator, color);
                         if (p3 == null) {
                             break;
                         }
 
+                        // If p1 , p2 and p3 do not lie on a line, a triangle is found.
                         if (CGAlgorithms.computeOrientation(p1.getCoordinate(), p2.getCoordinate(), p3.getCoordinate())
                                 != CGAlgorithms.COLLINEAR) {
                             ColoredPolygon triangle = new ColoredTriangle(p1, p2, p3);
@@ -184,7 +190,7 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
                 }
             }
         }
-
+        // If no triangle could be found for this color, return null.
         return null;
     }
 
@@ -196,7 +202,7 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
      * @return          The next point with the specified color. Null, if no such
      *                  point could be found.
      */
-    private ColoredPoint getNextWithColor(ListIterator<ColoredPoint> iterator, Color color) {
+    private ColoredPoint getNextWithColor(Iterator<ColoredPoint> iterator, Color color) {
         ColoredPoint point = null;
         while(iterator.hasNext()) {
             ColoredPoint currentPoint = iterator.next();
