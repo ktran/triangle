@@ -4,9 +4,7 @@ import com.vividsolutions.jts.util.Assert;
 import geometry.point.ColoredPoint;
 import geometry.point.ColoredPointImpl;
 import geometry.polygon.ColoredPolygon;
-import geometry.polygon.Polygon;
 import geometry.polygon.triangle.ColoredTriangle;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 

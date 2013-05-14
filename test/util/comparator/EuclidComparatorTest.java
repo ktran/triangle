@@ -1,6 +1,5 @@
 package util.comparator;
 
-import geometry.point.ColoredPoint;
 import geometry.point.ColoredPointImpl;
 import geometry.point.Point;
 import junit.framework.Assert;

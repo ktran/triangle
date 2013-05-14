@@ -17,7 +17,6 @@ import java.text.ParseException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.ForkJoinPool;
 
 /*
  * Tests the search algorithm for finding triangles in a 2d set of points.

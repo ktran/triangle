@@ -5,8 +5,8 @@ import com.vividsolutions.jts.algorithm.CGAlgorithms;
 import geometry.point.ColoredPoint;
 import geometry.polygon.ColoredPolygon;
 import geometry.polygon.triangle.ColoredTriangle;
-import util.parallel.EnclosedPointsFinder;
 import util.comparator.EuclidComparator;
+import util.parallel.EnclosedPointsFinder;
 
 import java.util.*;
 import java.util.concurrent.ForkJoinPool;
