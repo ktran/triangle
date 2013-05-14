@@ -67,20 +67,24 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
      *
      * @param points    The 2d points.
      */
-    public TriangleSearch(List<ColoredPoint> points, List<Boolean> enclosed, int splitDepth) {
+    private TriangleSearch(List<ColoredPoint> points, List<Boolean> enclosed, int splitDepth) {
         this.points = points;
         this.splitDepth = splitDepth;
         this.enclosed = enclosed;
     }
 
     public static List<ColoredPolygon> searchForTriangles(List<ColoredPoint> points) {
-        ForkJoinPool forkJoinPool = new ForkJoinPool();
-        Collections.sort(points);
         List<Boolean> enclosed = new ArrayList<Boolean>();
         for (int i = 0; i < points.size();++i) {
             enclosed.add(false);
         }
-        TriangleSearch search = new TriangleSearch(points, enclosed, 0);
+        int currentDepth = 0;
+
+        // Sorting points facilitates splitting into smaller tasks.
+        Collections.sort(points);
+
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        TriangleSearch search = new TriangleSearch(points, enclosed, currentDepth);
         return forkJoinPool.invoke(search);
     }
 
@@ -88,6 +92,7 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
      * Starts the triangle search.
      */
     private void search() {
+        // Extract points that are not yet enclosed in other triangles.
         List<ColoredPoint> availablePoints = new LinkedList<ColoredPoint>();
         int nPoints = this.points.size();
         for (int i = 0; i < nPoints; ++i) {
@@ -97,6 +102,10 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
             }
         }
 
+        /*
+         * As long as at least 3 points of any color exist, a point might
+         * be hiding.
+         */
         while (enoughPointsLeft(availablePoints)) {
             Color color = nextColor(availablePoints);
             ColoredPolygon triangle = nextTriangle(availablePoints, color);
