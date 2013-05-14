@@ -21,7 +21,22 @@ import java.util.concurrent.RecursiveTask;
  */
 public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
 
+    /**
+     * The maximum depth to split the search task into.
+     * The decision whether or not to split into smaller tasks is also dependent on
+     * {@link TriangleSearch#MAX_POINTS}.
+     *
+     * @see search.TriangleSearch#compute()
+     */
     public static final int SPLIT_DEPTH = 3;
+
+    /**
+     * The maximum number of points that can be considered for one thread.
+     * The decision whether or not to split into smaller tasks is also dependent on
+     * {@link TriangleSearch#SPLIT_DEPTH}.
+     *
+     * @see search.TriangleSearch#compute()
+     */
     public static final int MAX_POINTS = 1000;
 
     /**
@@ -29,6 +44,10 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
      */
     private List<ColoredPoint> points;
 
+    /**
+     * A collection of boolean indicating whether a point at the same index
+     * in {@link TriangleSearch#points} is enclosed by a triangle.
+     */
     private List<Boolean> enclosed;
 
     /**
@@ -36,6 +55,9 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
      */
     private List<ColoredPolygon> triangles;
 
+    /**
+     * The current splitting depth.
+     */
     private int splitDepth;
 
 
