@@ -8,7 +8,11 @@ import geometry.polygon.triangle.ColoredTriangle;
 import util.comparator.EuclidComparator;
 import util.parallel.EnclosedPointsFinder;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
