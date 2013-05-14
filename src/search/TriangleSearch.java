@@ -188,6 +188,14 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
         return null;
     }
 
+    /**
+     * Returns the next point with the specified color, if existent.
+     *
+     * @param iterator  The iterator to iterate through a collection of points.
+     * @param color     The point color that is searched for.
+     * @return          The next point with the specified color. Null, if no such
+     *                  point could be found.
+     */
     private ColoredPoint getNextWithColor(ListIterator<ColoredPoint> iterator, Color color) {
         ColoredPoint point = null;
         while(iterator.hasNext()) {
@@ -200,8 +208,13 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
         return point;
     }
 
-    private void markAsEnclosed(ColoredPoint p1) {
-        int index = this.points.indexOf(p1);
+    /**
+     * Marks a specified point as enclosed.
+     *
+     * @param point Point to be marked as enclosed
+     */
+    private void markAsEnclosed(ColoredPoint point) {
+        int index = this.points.indexOf(point);
         this.enclosed.set(index, true);
     }
 
@@ -245,8 +258,9 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
 
     /**
      * Selects the next color to be considered for finding a new triangle.
-     * 
-     * @return  Color, for which a new triangle could be found.
+     *
+     * @param  cPoints  The collection of points that are currently considered.
+     * @return          Color, for which a new triangle could be found.
      */
     private Color nextColor(List<ColoredPoint> cPoints) {
         int[] occurrences = colorOccurrence(cPoints);
@@ -268,9 +282,9 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
      * Returns a list of numbers indicating how many
      * points are still to be considered, ordered by their color.
      *
-     * @param  cPoints The points currently considered for triangle creation.
-     * @return  Array indicating how many points of each color are not yet
-     *          considered for triangle creation.
+     * @param  cPoints  The points currently considered for triangle creation.
+     * @return          Array indicating how many points of each color are not yet
+     *                  considered for triangle creation.
      */
     private int[] colorOccurrence(List<ColoredPoint> cPoints) {
         int nColors = Color.values().length;
@@ -292,7 +306,7 @@ public class TriangleSearch extends RecursiveTask<List<ColoredPolygon>> {
      * find a new triangle.
      *
      * @param  cPoints  The points that are currently considered for triangle creation.
-     * @return  True, if enough points are left for creating a triangle.
+     * @return          True, if enough points are left for creating a triangle.
      */
     private boolean enoughPointsLeft(List<ColoredPoint> cPoints) {
         boolean enoughPoints = false;
