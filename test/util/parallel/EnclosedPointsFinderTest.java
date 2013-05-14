@@ -13,10 +13,17 @@ import org.junit.Test;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
+/*
+ * Tests, whether an instance of EnclosedPointsFinder finds the enclosed points.
+ * The algorithm for detecting enclosed points is defined in
+ * ColoredTriangle.
+ *
  * @author Kim-Anh Tran
  */
 public class EnclosedPointsFinderTest {
+
+    // A dummy color used for initiating points.
+    private static final int DUMMY_COLOR = 0;
 
     // The EnclosedPointsFinder instance under test.
     private EnclosedPointsFinder finder;
@@ -30,12 +37,12 @@ public class EnclosedPointsFinderTest {
 
     @Before
     public void setUp() throws Exception {
-        this.p1 = ColoredPointImpl.create2D(0.0, 1.0, 0);
-        this.p2 = ColoredPointImpl.create2D(3.0, 3.0, 0);
-        this.p3 = ColoredPointImpl.create2D(5.0, 3.0, 0);
+        this.p1 = ColoredPointImpl.create2D(0.0, 1.0, DUMMY_COLOR);
+        this.p2 = ColoredPointImpl.create2D(3.0, 3.0, DUMMY_COLOR);
+        this.p3 = ColoredPointImpl.create2D(5.0, 3.0, DUMMY_COLOR);
 
-        ColoredPoint p4 = ColoredPointImpl.create2D(0.0, 5.0, 0);
-        ColoredPoint p5 = ColoredPointImpl.create2D(4.0, 3.0, 0);
+        ColoredPoint p4 = ColoredPointImpl.create2D(0.0, 5.0, DUMMY_COLOR);
+        ColoredPoint p5 = ColoredPointImpl.create2D(4.0, 3.0, DUMMY_COLOR);
         ColoredPolygon triangle = ColoredTriangle.fromPoints(this.p1, p4, p5);
 
         List<ColoredPoint> cPoints = new LinkedList<ColoredPoint>();

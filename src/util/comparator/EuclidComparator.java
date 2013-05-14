@@ -42,7 +42,7 @@ public class EuclidComparator implements Comparator<Point> {
             return -1;
         }
 
-        if (distP2 > distP1) {
+        if (distP2 < distP1) {
             return 1;
         }
 
